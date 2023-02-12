@@ -41,10 +41,3 @@ struct RouteInfo: View {
         .environmentObject(mapData)
     }
 }
-/*
-struct RouteInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        RouteInfo(matchRouteInfo: MatchRouteInfo(), chosenRoute: routeAvailable(srcRS: <#T##arrRouteStop#>, desRS: <#T##arrRouteStop#>))
-    }
-}
-*/

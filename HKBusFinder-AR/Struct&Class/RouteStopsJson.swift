@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct routeResponse: Codable{
     var data: [routeResult]

@@ -186,6 +186,51 @@
 			<key>uniqueIdentifier</key>
 			<string>045401BA-26D3-422A-AFD0-4083CB7662F3</string>
 		</dict>
+		<key>057A6E8E-33BE-4C7D-A74D-E26A71975032</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>B7984457-09D5-4F12-819C-3B9ABC430554</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-13-32-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878812.93996298</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>057A6E8E-33BE-4C7D-A74D-E26A71975032</string>
+		</dict>
 		<key>064BB72E-79D2-43CF-812C-39E7D4355E85</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -230,6 +275,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>064BB72E-79D2-43CF-812C-39E7D4355E85</string>
+		</dict>
+		<key>09195A49-BB67-4C63-8480-3271A8441155</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>A920A8B3-33D8-4209-903C-96BF0938F4FC</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_05-03-00-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697842180.85544503</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>09195A49-BB67-4C63-8480-3271A8441155</string>
 		</dict>
 		<key>0AB8CEAC-5DBD-44C6-9BA9-56FBA4DF6071</key>
 		<dict>
@@ -636,6 +726,51 @@
 			<key>uniqueIdentifier</key>
 			<string>212F5594-830D-44F9-989E-70DB732ED499</string>
 		</dict>
+		<key>21B56AEB-F1A1-48F5-905A-441978C8E885</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>FAF1EF6D-60F4-4F9B-8D9F-E8F1CF5F0690</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-13-56-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882436.61980605</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>21B56AEB-F1A1-48F5-905A-441978C8E885</string>
+		</dict>
 		<key>230D71DD-6407-4018-A8B5-715FF0B93CF7</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -770,6 +905,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>26A5D96B-CD34-4EA1-A133-46F393A5C141</string>
+		</dict>
+		<key>283CB36D-889E-4B75-A16E-39D9CAFD599B</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>A535BBA5-85E7-4710-A17C-85E67AAE451C</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-19-44-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882784.88952506</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>283CB36D-889E-4B75-A16E-39D9CAFD599B</string>
 		</dict>
 		<key>2C32A78E-E920-47A0-831C-000BB436DBD6</key>
 		<dict>
@@ -1131,6 +1311,51 @@
 			<key>uniqueIdentifier</key>
 			<string>39118EEB-84EE-455B-AFFB-1B23B2CFB080</string>
 		</dict>
+		<key>3B1F8E4A-A747-4F79-8295-E3CA05E4C81A</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>352FBC9A-0813-43CD-B015-9FBAC963342C</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_05-03-53-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697842233.81994605</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>3B1F8E4A-A747-4F79-8295-E3CA05E4C81A</string>
+		</dict>
 		<key>3B6B41E6-C4DC-4EE9-B551-CBD916C717EE</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -1446,6 +1671,51 @@
 			<key>uniqueIdentifier</key>
 			<string>445D1D55-48A5-4544-A483-6A03C18A84A0</string>
 		</dict>
+		<key>4477B517-CC10-45A8-96C9-0AE97EEC912B</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>2562351F-6470-4D0C-A586-0A698DBDF39A</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-13-00-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878780.45402503</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>4477B517-CC10-45A8-96C9-0AE97EEC912B</string>
+		</dict>
 		<key>468B6BAE-86CB-4927-BC1A-29384D419779</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -1490,6 +1760,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>468B6BAE-86CB-4927-BC1A-29384D419779</string>
+		</dict>
+		<key>46A8F5A3-CBD6-4CB1-9047-FBA4F0D427FF</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>A7E6106E-E7A7-4F78-BAC5-4890C6E7D9C0</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-07-41-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882061.71656096</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>46A8F5A3-CBD6-4CB1-9047-FBA4F0D427FF</string>
 		</dict>
 		<key>488DC221-6C39-4174-9655-B230A3DA9651</key>
 		<dict>
@@ -1761,6 +2076,51 @@
 			<key>uniqueIdentifier</key>
 			<string>4E3FEB1C-37CC-43AB-9B1B-E57A4E243CFB</string>
 		</dict>
+		<key>5157A7C4-D285-4EBC-9C29-E76E6F399564</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>CA345B59-077D-44BF-81B4-4BDBFA4FCB30</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-23-21-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697883001.94648695</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>5157A7C4-D285-4EBC-9C29-E76E6F399564</string>
+		</dict>
 		<key>53AB26E7-90CD-4F03-A10A-325FB156F2CF</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -1896,6 +2256,51 @@
 			<key>uniqueIdentifier</key>
 			<string>543D0C82-D5E8-42BC-8F49-D796F0AFE28C</string>
 		</dict>
+		<key>5546E0E6-8E45-4EF6-8BE1-D1F43A1D1A83</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>7E4439F2-8C25-40CA-943C-C0E809AC5A32</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-02-18-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878138.394436</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>5546E0E6-8E45-4EF6-8BE1-D1F43A1D1A83</string>
+		</dict>
 		<key>565BF5E7-3A88-4789-8436-C251E7DC221F</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -1940,6 +2345,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>565BF5E7-3A88-4789-8436-C251E7DC221F</string>
+		</dict>
+		<key>57DC2A31-0462-4211-9898-1825A19375F3</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>4D7D9D1A-B77F-40BC-B411-C25C2962CBCC</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-14-31-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878871.53192699</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>57DC2A31-0462-4211-9898-1825A19375F3</string>
 		</dict>
 		<key>58F5D329-0F2C-414C-9E35-08D0368C2743</key>
 		<dict>
@@ -2166,6 +2616,51 @@
 			<key>uniqueIdentifier</key>
 			<string>622B1581-6F57-4825-81C3-C12300D03DAD</string>
 		</dict>
+		<key>667382F9-EBE3-442F-ACAD-8987F420B6BC</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>7F6F3540-4780-4865-BC6B-1C0F1A6D4EBF</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-13-46-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882426.41686797</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>667382F9-EBE3-442F-ACAD-8987F420B6BC</string>
+		</dict>
 		<key>6A34FF80-7C72-4099-811C-1E34F6102310</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -2255,6 +2750,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>6D7A2EB9-A794-4D6D-A239-D682FA6CD748</string>
+		</dict>
+		<key>6ED90111-92F8-4414-9F10-6714840F9477</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>870FCB6C-85B3-4E6E-B893-19D47D249414</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-41-26-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697840886.88113403</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>6ED90111-92F8-4414-9F10-6714840F9477</string>
 		</dict>
 		<key>6F94180B-43EC-4467-A051-F450E9912441</key>
 		<dict>
@@ -2706,6 +3246,96 @@
 			<key>uniqueIdentifier</key>
 			<string>8647EF13-25BE-43EC-BF9C-1263CDD3DB10</string>
 		</dict>
+		<key>86C0602C-10A0-4833-B649-266E30C23769</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>7B715383-0E09-44B5-B165-D3F6E6DA5DAA</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.11_19-05-52-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697806352.533553</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>86C0602C-10A0-4833-B649-266E30C23769</string>
+		</dict>
+		<key>898FD204-CE06-43D0-8F15-3ECA36520CD2</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>C58E961B-0743-41CB-B96A-29CDF32B68C4</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-12-21-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878741.97275102</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>898FD204-CE06-43D0-8F15-3ECA36520CD2</string>
+		</dict>
 		<key>8AD49C83-2BDB-4631-90A2-25C5346318DE</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -2795,6 +3425,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>8B5F4480-9BCA-4CDE-AEED-79AA9F05CE97</string>
+		</dict>
+		<key>8C720291-3713-476C-9395-1A7B0B4FBA2C</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>616DA7F6-6402-4579-B676-6ABB4DD763E3</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-48-25-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697841305.44366705</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>8C720291-3713-476C-9395-1A7B0B4FBA2C</string>
 		</dict>
 		<key>8CDE0E18-7E67-4E7E-9D0B-57D21A2CB598</key>
 		<dict>
@@ -3021,6 +3696,51 @@
 			<key>uniqueIdentifier</key>
 			<string>98993BFE-D7B1-4EF8-B6C6-B7E6D1708621</string>
 		</dict>
+		<key>99B7F7E4-3CF9-40BD-895A-2C2294279A77</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>60ADCE80-899E-495D-BC26-44E566FD5E7C</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-06-32-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697881992.52570999</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>99B7F7E4-3CF9-40BD-895A-2C2294279A77</string>
+		</dict>
 		<key>9A7B97AD-8145-4F46-A0A7-9899B205E912</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -3066,6 +3786,51 @@
 			<key>uniqueIdentifier</key>
 			<string>9A7B97AD-8145-4F46-A0A7-9899B205E912</string>
 		</dict>
+		<key>9BBD6598-7065-4234-95C8-26E8B41D0DF0</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>745F030D-15BD-4860-82E2-3E0D3C8B7277</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.11_19-04-34-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697806274.84154296</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>9BBD6598-7065-4234-95C8-26E8B41D0DF0</string>
+		</dict>
 		<key>A2FD83D5-48CC-47CA-A6CB-68416BC89A36</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -3110,6 +3875,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>A2FD83D5-48CC-47CA-A6CB-68416BC89A36</string>
+		</dict>
+		<key>A758E950-FBE6-40E3-962B-6C8CB9F21854</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>71617685-F422-47AE-AC0A-BE7E279134C6</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-09-50-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697838990.90381503</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>A758E950-FBE6-40E3-962B-6C8CB9F21854</string>
 		</dict>
 		<key>A957CC9D-84AF-4CFA-B133-8EF486E140F4</key>
 		<dict>
@@ -3245,6 +4055,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>A9E5C0AF-A367-42AB-B16E-43D01F957781</string>
+		</dict>
+		<key>ABF2971F-AE5B-4EBD-9C2A-7002A4534E5F</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>A2F26AC1-4069-4D3B-A751-5428A4937E82</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-05-13-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878313.58931899</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>ABF2971F-AE5B-4EBD-9C2A-7002A4534E5F</string>
 		</dict>
 		<key>AE54B6D0-51FA-4E67-8BEE-C4C5C8E076C1</key>
 		<dict>
@@ -3426,6 +4281,51 @@
 			<key>uniqueIdentifier</key>
 			<string>B1620E6E-CF11-4A36-B5E7-7C6204C6F058</string>
 		</dict>
+		<key>B1D2F1FA-7372-473C-98F1-C7DCA8173E91</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>79500D03-BA69-478E-A4A9-99564ED1A306</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-17-54-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882674.515131</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>B1D2F1FA-7372-473C-98F1-C7DCA8173E91</string>
+		</dict>
 		<key>B3054A4F-CE8F-45D1-858C-B71474AE3E35</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -3561,6 +4461,51 @@
 			<key>uniqueIdentifier</key>
 			<string>B353474C-E9B5-47FB-BB7E-F10C0768D713</string>
 		</dict>
+		<key>B77B8573-28D0-4366-B955-89ED17091EFF</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>15AC98E8-5F7A-4676-8398-92675F469B58</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-21-52-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882912.91841495</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>B77B8573-28D0-4366-B955-89ED17091EFF</string>
+		</dict>
 		<key>BBA8D1AB-920B-4EB6-9EF3-5C44DA339EEB</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -3606,6 +4551,96 @@
 			<key>uniqueIdentifier</key>
 			<string>BBA8D1AB-920B-4EB6-9EF3-5C44DA339EEB</string>
 		</dict>
+		<key>BBC14CDA-F4A9-4020-AA33-94EA259CF7A7</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>0495C9BA-6991-4B27-9E49-3C417D9C7D71</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-10-50-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878650.81702495</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>BBC14CDA-F4A9-4020-AA33-94EA259CF7A7</string>
+		</dict>
+		<key>C01879DC-4504-41E2-9071-A7716F3775D1</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>0432B0B4-E972-4C4E-B288-2ACA0D05A14D</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_05-05-52-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697842352.02488399</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>C01879DC-4504-41E2-9071-A7716F3775D1</string>
+		</dict>
 		<key>C074FA8C-5688-44B8-9DF9-B98882C37EB0</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -3650,6 +4685,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>C074FA8C-5688-44B8-9DF9-B98882C37EB0</string>
+		</dict>
+		<key>C07B1178-7F28-49F4-A115-57F9AEF2AA0A</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>ACFD0FB4-2DA6-4098-9412-ADA7839B565F</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-15-02-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878902.50872099</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>C07B1178-7F28-49F4-A115-57F9AEF2AA0A</string>
 		</dict>
 		<key>C493F41D-FB49-4573-9A67-63866ADC5F9B</key>
 		<dict>
@@ -3741,6 +4821,96 @@
 			<key>uniqueIdentifier</key>
 			<string>C7214114-70EF-4916-BD6F-6E74C756D852</string>
 		</dict>
+		<key>CB58FC1E-26D8-4388-B10E-430D0F13FC32</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>58A0E874-5E3F-427C-A98D-1692637BE44E</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-41-48-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697840908.15628004</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>CB58FC1E-26D8-4388-B10E-430D0F13FC32</string>
+		</dict>
+		<key>CD82A332-369E-4328-AA61-D1E582898D47</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>29215374-4E6F-40E0-8850-7F0437CD79DC</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_03-02-58-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697834978.39277995</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>CD82A332-369E-4328-AA61-D1E582898D47</string>
+		</dict>
 		<key>CE6D076A-10D0-470F-97B7-1A37DE4055C0</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -3785,6 +4955,141 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>CE6D076A-10D0-470F-97B7-1A37DE4055C0</string>
+		</dict>
+		<key>D1806A70-7E63-4DBB-BCBC-F3E91F4C61CC</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>3CA5E265-1AFD-440A-9455-06882147F95F</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-16-00-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882560.87923098</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>D1806A70-7E63-4DBB-BCBC-F3E91F4C61CC</string>
+		</dict>
+		<key>D1D5C1A2-979D-4625-B4DB-239F3D7F6A92</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>8378396D-E77B-4DA5-92CC-922A05F1EA26</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-12-09-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697839129.25042903</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>D1D5C1A2-979D-4625-B4DB-239F3D7F6A92</string>
+		</dict>
+		<key>D39A134C-AA50-41EB-960F-2CE6E0F81809</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>8E8A9BF8-F443-4934-9ABA-9C942A980B5B</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-35-08-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697840508.48222196</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>D39A134C-AA50-41EB-960F-2CE6E0F81809</string>
 		</dict>
 		<key>D4775E07-7C9B-4905-A67F-0262AD5BFE18</key>
 		<dict>
@@ -4056,6 +5361,96 @@
 			<key>uniqueIdentifier</key>
 			<string>DD81989B-1D69-4C23-98AB-2C6713C196F4</string>
 		</dict>
+		<key>DF0C0F0B-EE43-4061-A5E0-14F9D7A7082E</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>75D5B028-04CB-4BD5-BDE3-86B582DFC071</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-09-11-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882151.85252595</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>DF0C0F0B-EE43-4061-A5E0-14F9D7A7082E</string>
+		</dict>
+		<key>DF815B5D-E55C-4ED8-906E-F8C5D2D953BD</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>EDF7B213-0CBE-4108-9D49-9FD75EDB68E3</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-34-10-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697840450.97697496</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>DF815B5D-E55C-4ED8-906E-F8C5D2D953BD</string>
+		</dict>
 		<key>E31C3C7E-ECD7-4835-A05E-DC8274C24830</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -4100,6 +5495,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>E31C3C7E-ECD7-4835-A05E-DC8274C24830</string>
+		</dict>
+		<key>E575D183-71D8-42F8-9BC7-748C550B4820</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>76742180-99AF-4023-AF48-D3A73030C8D8</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-31-31-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697840291.30759203</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>E575D183-71D8-42F8-9BC7-748C550B4820</string>
 		</dict>
 		<key>EC46B2F8-70B4-402C-976B-F890CDDD3F72</key>
 		<dict>
@@ -4236,6 +5676,51 @@
 			<key>uniqueIdentifier</key>
 			<string>EE703BC4-68B0-4390-952C-55566291BCC0</string>
 		</dict>
+		<key>EF780F37-E549-4D70-A6F1-1B102E44E44D</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>32CAF809-48C3-4E19-BECC-0C44CCD9C91D</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_04-38-13-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697840693.36478198</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>EF780F37-E549-4D70-A6F1-1B102E44E44D</string>
+		</dict>
 		<key>F1BAEC8D-84E5-4004-BA32-963E1A610106</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -4280,6 +5765,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>F1BAEC8D-84E5-4004-BA32-963E1A610106</string>
+		</dict>
+		<key>F5C979C2-B1C0-43BB-B164-15AF9B080B30</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>A5552DFF-AB46-4DBD-A3CD-44FD921E7E1C</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_14-58-48-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697877928.84690297</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>F5C979C2-B1C0-43BB-B164-15AF9B080B30</string>
 		</dict>
 		<key>F68467FD-22EC-450E-9EC4-6DFA459513D1</key>
 		<dict>
@@ -4371,6 +5901,51 @@
 			<key>uniqueIdentifier</key>
 			<string>F767BA3D-A3AA-4CB3-90CD-B0EA5D8D354E</string>
 		</dict>
+		<key>F83511C3-2FFE-4D49-9BB6-89FDB34898DE</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>7D577956-9CF3-4E9E-A2D0-38655D091385</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_16-19-52-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697882792.33067501</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>F83511C3-2FFE-4D49-9BB6-89FDB34898DE</string>
+		</dict>
 		<key>FAA77310-4CD9-434C-A728-D1782559E4BC</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -4460,6 +6035,51 @@
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
 			<string>FC555340-2345-4A7F-B512-F0E84F7F2B0A</string>
+		</dict>
+		<key>FF0FDF0B-1126-4AC5-9743-911599BAAB0D</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>A15689CA-4963-4648-BE04-657E63A6A05E</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-HKBusFinder-AR-2023.02.12_15-07-06-+0800.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HKBusFinder-AR project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HKBusFinder-AR</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>timeStartedRecording</key>
+			<real>697878426.017084</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run HKBusFinder-AR</string>
+			<key>uniqueIdentifier</key>
+			<string>FF0FDF0B-1126-4AC5-9743-911599BAAB0D</string>
 		</dict>
 	</dict>
 </dict>

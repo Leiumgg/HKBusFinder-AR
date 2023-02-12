@@ -18,6 +18,7 @@
 		C27D458C2992EAAB008990E0 /* DirectionsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D458B2992EAAB008990E0 /* DirectionsMapView.swift */; };
 		C27D459029979153008990E0 /* RouteStopsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D458F29979153008990E0 /* RouteStopsMapView.swift */; };
 		C27D45922997915F008990E0 /* RouteStopsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45912997915F008990E0 /* RouteStopsScrollView.swift */; };
+		C27D4594299830D1008990E0 /* RouteStopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D4593299830D1008990E0 /* RouteStopInfo.swift */; };
 		C286AB19298A51F00031B094 /* MatchRouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AB18298A51F00031B094 /* MatchRouteInfo.swift */; };
 		C286AB1B298A9BE10031B094 /* routeAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AB1A298A9BE10031B094 /* routeAvailable.swift */; };
 		C2A1062B29846D9F00895C10 /* HKBusFinder_ARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1062A29846D9F00895C10 /* HKBusFinder_ARApp.swift */; };
@@ -49,6 +50,7 @@
 		C27D458B2992EAAB008990E0 /* DirectionsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsMapView.swift; sourceTree = "<group>"; };
 		C27D458F29979153008990E0 /* RouteStopsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsMapView.swift; sourceTree = "<group>"; };
 		C27D45912997915F008990E0 /* RouteStopsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsScrollView.swift; sourceTree = "<group>"; };
+		C27D4593299830D1008990E0 /* RouteStopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopInfo.swift; sourceTree = "<group>"; };
 		C286AB18298A51F00031B094 /* MatchRouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRouteInfo.swift; sourceTree = "<group>"; };
 		C286AB1A298A9BE10031B094 /* routeAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeAvailable.swift; sourceTree = "<group>"; };
 		C2A1062729846D9E00895C10 /* HKBusFinder-AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HKBusFinder-AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 				C2A106472984745F00895C10 /* routeCoordinates.swift */,
 				C2A1064F2986712A00895C10 /* stopsJson.swift */,
 				C2A106512986750500895C10 /* RouteStopsJson.swift */,
+				C27D4593299830D1008990E0 /* RouteStopInfo.swift */,
 				C286AB1A298A9BE10031B094 /* routeAvailable.swift */,
 				C286AB18298A51F00031B094 /* MatchRouteInfo.swift */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				C2A1062D29846D9F00895C10 /* ContentView.swift in Sources */,
 				C27D457B298FA00A008990E0 /* Nothing2View.swift in Sources */,
+				C27D4594299830D1008990E0 /* RouteStopInfo.swift in Sources */,
 				C27D458A2992EA26008990E0 /* DirectionsMapViewModel.swift in Sources */,
 				C27D45842990B35C008990E0 /* DirectionsView.swift in Sources */,
 				C2A106502986712A00895C10 /* stopsJson.swift in Sources */,

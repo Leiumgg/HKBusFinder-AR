@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct RouteStopsScrollView: View {
+    
+    @ObservedObject var matchRouteInfo: MatchRouteInfo
+    var chosenRoute: routeAvailable
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            List(matchRouteInfo.selectedRSInfo, id: \.self) { item in
+                Text("\(item.seq): \(item.stopInfo.name_en)")
+            }
+        }
+        .onAppear {
+            matchRouteInfo.loadSeqStopInfo(routeRS: chosenRoute.srcRS.routeStop)
+        }
     }
-}
-
-struct RouteStopsScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        RouteStopsScrollView()
-    }
+    
 }

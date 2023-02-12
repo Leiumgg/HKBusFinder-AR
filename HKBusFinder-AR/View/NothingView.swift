@@ -8,14 +8,30 @@
 import SwiftUI
 
 class Counter: ObservableObject {
-    @Published var count = 0 {
-        didSet {zeroit()}
-    }
+    @Published var RSs = [routeResult]()
     
-    func zeroit() {
-        if count > 20 {
-            count = 0
+    func loadData(){
+        RSs = [routeResult]()
+        let route = "935"
+        let bound = "outbound"
+        let service_type = "2"
+        guard let url = URL(string: "https://data.etabus.gov.hk/v1/transport/kmb/route-stop/\(route)/\(bound)/\(service_type)") else {
+            print("Invalid URL")
+            return
         }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { fdata, response, error in
+            if let fdata = fdata {
+                if let decodedResponse = try? JSONDecoder().decode(routeResponse.self, from: fdata) {
+                    DispatchQueue.main.async {
+                        self.RSs = decodedResponse.data
+                    }
+                    return
+                }
+            }
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
+        print("----------------------\(RSs.count)----------------------")
     }
 }
 
@@ -23,25 +39,16 @@ struct NothingView: View {
     @ObservedObject var counter = Counter()
     var body: some View {
         VStack {
-            Text("Count: \(counter.count)")
-            CounterView(counter: counter)
-        }
-        .onAppear{print("nothing onappear")}
-    }
-}
-
-struct CounterView: View {
-    @ObservedObject var counter: Counter
-
-    var body: some View {
-        VStack {
-            Button(action: {
-                self.counter.count += 1
-            }) {
-                Text("Increase Count").onAppear{print("Button on appear")}
+            NavigationLink {
+                List(counter.RSs, id: \.self) { i in
+                    Text("\(i.seq): \(i.stop)")
+                }
+            } label: {
+                Text("sadfasdf")
             }
-            Text("subview counter: \(counter.count)")
+
         }
+        .onAppear{counter.loadData()}
     }
 }
 

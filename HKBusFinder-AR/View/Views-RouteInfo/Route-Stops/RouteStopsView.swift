@@ -24,8 +24,12 @@ struct RouteStopsView: View {
                 RouteStopsMapView()
                     .environmentObject(mapData)
                 
-                RouteStopsScrollView()
+                RouteStopsScrollView(matchRouteInfo: matchRouteInfo, chosenRoute: chosenRoute)
             }
+        }/*
+        .onAppear {
+            matchRouteInfo.loadSelectedRSsData(routeRS: chosenRoute.srcRS.routeStop)
         }
+        */
     }
 }

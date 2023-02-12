@@ -28,6 +28,36 @@ class MatchRouteInfo: ObservableObject {
     
     @Published var routesAvailable = [routeAvailable]()
     
+    @Published var selectedRSs = [routeResult]()
+    @Published var selectedRSInfo = [seqStopInfo]()
+    
+    
+    // Load Bus Stops Info of Selected Route
+    func loadSeqStopInfo(routeRS: routeResult) {
+        selectedRSs = [routeResult]()
+        selectedRSInfo = [seqStopInfo]()
+        var foundit = false
+        for RS in allRouteStops {
+            if (RS.route == routeRS.route) && (RS.bound == routeRS.bound) && (RS.service_type == routeRS.service_type) {
+                foundit = true
+                selectedRSs.append(RS)
+            } else {
+                foundit = false
+            }
+            if !selectedRSs.isEmpty && !foundit {
+                break
+            }
+        }
+        
+        for allStop in allStops {
+            for selectedRS in selectedRSs {
+                if allStop.stop == selectedRS.stop {
+                    selectedRSInfo.append(seqStopInfo(seq: Int(selectedRS.seq)!, stopInfo: allStop))
+                }
+            }
+        }
+        selectedRSInfo = selectedRSInfo.sorted {$0.seq < $1.seq}
+    }
     
     // loadStopsData from JSON URL
     func loadStopsData() {

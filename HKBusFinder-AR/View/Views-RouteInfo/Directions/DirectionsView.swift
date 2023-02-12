@@ -28,7 +28,6 @@ struct DirectionsView: View {
                 Spacer()
                 
                 VStack {
-                    
                     Button(action: mapData.focusRoute) {
                         Image(systemName: mapData.showToSrcRoute ? "point.topleft.down.curvedto.point.filled.bottomright.up" : "point.filled.topleft.down.curvedto.point.bottomright.up")
                             .font(.system(size: 30))
