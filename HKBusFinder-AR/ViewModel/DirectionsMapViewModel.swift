@@ -10,7 +10,7 @@ import MapKit
 import CoreLocation
 
 class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-    
+    // MKMapView
     @Published var mapView = MKMapView()
     
     // Region
@@ -55,9 +55,36 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     // Set jor Region Mei
     @Published var hasSetRegion = false
     
+    // RouteStopsMapView Add jor Pin and Route mei
+    @Published var pinAdded = false
+    
     // Going to Show What Route Next for focusRoute
     @Published var showToSrcRoute = true
     
+    
+    // Add Annotation: Stops of Selected Route & Destination
+    func pinRouteStops(selectedRSInfo: [seqStopInfo]) {
+        mapView.setRegion(region, animated: false)
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeAnnotations(mapView.annotations)
+        
+        // Add Annotation
+        var busStopsPinList = [MKPointAnnotation]()
+        for busStop in selectedRSInfo {
+            let busStopPin = MKPointAnnotation()
+            busStopPin.title = busStop.stopInfo.name_en
+            busStopPin.coordinate = CLLocationCoordinate2D(latitude: Double(busStop.stopInfo.lat)!, longitude: Double(busStop.stopInfo.long)!)
+            busStopsPinList.append(busStopPin)
+        }
+        self.mapView.addAnnotations(busStopsPinList)
+        
+        // Add Bus Route Line
+        let busRouteLine = MKPolyline(coordinates: busStopsPinList.map {$0.coordinate}, count: busStopsPinList.count)
+        busRouteLine.title = "busRouteLine"
+        mapView.addOverlay(busRouteLine)
+        
+        pinAdded = true
+    }
     
     // Initailize Pin and Dotted Line
     func initPinNDotLine() {
@@ -115,8 +142,6 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
             self.mapView.setVisibleMapRect(hasRoute.last!.polyline.boundingMapRect,edgePadding: UIEdgeInsets(top: 80, left: 80, bottom: 80, right: 80) ,animated: true)
             showToSrcRoute.toggle()
         }
-        print(showToSrcRoute)
-        print(hasRoute.count)
     }
     
     // Change isToRealDes Boolean Status
@@ -156,12 +181,12 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         directions.calculate { response, error in
             guard let route = response?.routes.first else {return}
             self.routeCoordinates = route.polyline.coordinates
-            
+            /*
             for i in 0..<self.routeCoordinates.count {
                 print("\(i): \(self.routeCoordinates[i])")
             }
             print("Point Count: \(route.polyline.pointCount)")
-            
+            */
             if (Destination.latitude == self.busSrcCoord.latitude) && (Destination.longitude == self.busSrcCoord.longitude){
                 route.polyline.title = "To Bus Stop"
             } else {
@@ -218,7 +243,6 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     
     // Getting User Region
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         guard let location = locations.last else { return }
         
         //use location.altitude to get the sea level information for ar entity y-axis
@@ -231,7 +255,6 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
             hasSetRegion = true
             initPinNDotLine()
         }
-        
         checkTransitStatus()
         
         // Find closest route node

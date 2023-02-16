@@ -6,15 +6,64 @@
 //
 
 import SwiftUI
+import MapKit
+import CoreLocation
 
-struct RouteStopsMapView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct RouteStopsMapView: UIViewRepresentable {
+    @EnvironmentObject var mapData: DirectionsMapViewModel
+    @ObservedObject var matchRouteInfo: MatchRouteInfo
+    
+    func makeCoordinator() -> Coordinator {
+        return RouteStopsMapView.Coordinator()
     }
-}
-
-struct RouteStopsMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        RouteStopsMapView()
+    
+    func makeUIView(context: Context) -> MKMapView {
+        let view = mapData.mapView
+        
+        view.showsUserLocation = true
+        view.delegate = context.coordinator
+        
+        return view
+    }
+    
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        // Add Pin When Region Set
+        if mapData.hasSetRegion && !mapData.pinAdded {
+            mapData.pinRouteStops(selectedRSInfo: matchRouteInfo.selectedRSInfo)
+        }
+    }
+    
+    class Coordinator: NSObject, MKMapViewDelegate {
+        // Render the route
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = .systemRed
+            renderer.lineWidth = 5
+            return renderer
+        }
+        
+        // Customize Pin
+        func mapView(_ MapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            if annotation is MKUserLocation {
+                return nil
+            }
+            
+            let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+            switch annotation.title {
+                case "Get On":
+                    annotationView.markerTintColor = .systemGreen
+                case "Get Off":
+                    annotationView.markerTintColor = .systemOrange
+                case "Starting Point":
+                    annotationView.markerTintColor = .clear
+                    annotationView.image = UIImage(systemName: "record.circle")
+                    annotationView.frame.size = CGSize(width: 30, height: 30)
+                case "Destination":
+                    annotationView.markerTintColor = .systemRed
+                default:
+                    annotationView.markerTintColor = .systemBlue
+            }
+            return annotationView
+        }
     }
 }

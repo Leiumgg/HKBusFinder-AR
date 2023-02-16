@@ -50,7 +50,7 @@ struct DirectionsMapView: UIViewRepresentable {
                 return nil
             }
             
-            var annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+            let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
             switch annotation.title {
                 case "Get On":
                     annotationView.markerTintColor = .systemGreen

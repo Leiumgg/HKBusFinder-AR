@@ -28,11 +28,14 @@ class MatchRouteInfo: ObservableObject {
     
     @Published var routesAvailable = [routeAvailable]()
     
+    // The Stops Info of Selected Route in Sequence
     @Published var selectedRSs = [routeResult]()
     @Published var selectedRSInfo = [seqStopInfo]()
     
+    // EDIT!!
+    @Published var chosenRoute = [routeAvailable]()
     
-    // Load Bus Stops Info of Selected Route
+    // Load Bus Stops Info of Selected Route by Local Array Loop
     func loadSeqStopInfo(routeRS: routeResult) {
         selectedRSs = [routeResult]()
         selectedRSInfo = [seqStopInfo]()
