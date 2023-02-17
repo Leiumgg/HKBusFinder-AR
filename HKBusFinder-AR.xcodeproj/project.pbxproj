@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		C27D457B298FA00A008990E0 /* Nothing2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D457A298FA00A008990E0 /* Nothing2View.swift */; };
 		C27D457D2990B032008990E0 /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D457C2990B032008990E0 /* RouteInfo.swift */; };
-		C27D45822990B338008990E0 /* RouteStopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45812990B338008990E0 /* RouteStopsView.swift */; };
 		C27D45842990B35C008990E0 /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45832990B35C008990E0 /* DirectionsView.swift */; };
 		C27D458A2992EA26008990E0 /* DirectionsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45892992EA26008990E0 /* DirectionsMapViewModel.swift */; };
 		C27D458C2992EAAB008990E0 /* DirectionsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D458B2992EAAB008990E0 /* DirectionsMapView.swift */; };
-		C27D459029979153008990E0 /* RouteStopsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D458F29979153008990E0 /* RouteStopsMapView.swift */; };
 		C27D45922997915F008990E0 /* RouteStopsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45912997915F008990E0 /* RouteStopsScrollView.swift */; };
 		C27D4594299830D1008990E0 /* seqStopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D4593299830D1008990E0 /* seqStopInfo.swift */; };
 		C286AB19298A51F00031B094 /* MatchRouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AB18298A51F00031B094 /* MatchRouteInfo.swift */; };
@@ -38,11 +36,9 @@
 /* Begin PBXFileReference section */
 		C27D457A298FA00A008990E0 /* Nothing2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nothing2View.swift; sourceTree = "<group>"; };
 		C27D457C2990B032008990E0 /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
-		C27D45812990B338008990E0 /* RouteStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsView.swift; sourceTree = "<group>"; };
 		C27D45832990B35C008990E0 /* DirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
 		C27D45892992EA26008990E0 /* DirectionsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsMapViewModel.swift; sourceTree = "<group>"; };
 		C27D458B2992EAAB008990E0 /* DirectionsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsMapView.swift; sourceTree = "<group>"; };
-		C27D458F29979153008990E0 /* RouteStopsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsMapView.swift; sourceTree = "<group>"; };
 		C27D45912997915F008990E0 /* RouteStopsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsScrollView.swift; sourceTree = "<group>"; };
 		C27D4593299830D1008990E0 /* seqStopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seqStopInfo.swift; sourceTree = "<group>"; };
 		C286AB18298A51F00031B094 /* MatchRouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRouteInfo.swift; sourceTree = "<group>"; };
@@ -97,8 +93,6 @@
 		C27D458E299790EF008990E0 /* Route-Stops */ = {
 			isa = PBXGroup;
 			children = (
-				C27D45812990B338008990E0 /* RouteStopsView.swift */,
-				C27D458F29979153008990E0 /* RouteStopsMapView.swift */,
 				C27D45912997915F008990E0 /* RouteStopsScrollView.swift */,
 			);
 			path = "Route-Stops";
@@ -257,7 +251,6 @@
 				C27D458A2992EA26008990E0 /* DirectionsMapViewModel.swift in Sources */,
 				C27D45842990B35C008990E0 /* DirectionsView.swift in Sources */,
 				C2A106502986712A00895C10 /* stopsJson.swift in Sources */,
-				C27D459029979153008990E0 /* RouteStopsMapView.swift in Sources */,
 				C2A1063C2984737000895C10 /* HomeMapView.swift in Sources */,
 				C27D457D2990B032008990E0 /* RouteInfo.swift in Sources */,
 				C27D458C2992EAAB008990E0 /* DirectionsMapView.swift in Sources */,
@@ -271,7 +264,6 @@
 				C2A1064C2985599C00895C10 /* RoutesSelect.swift in Sources */,
 				C2A106522986750500895C10 /* routeStopsJson.swift in Sources */,
 				C286AB19298A51F00031B094 /* MatchRouteInfo.swift in Sources */,
-				C27D45822990B338008990E0 /* RouteStopsView.swift in Sources */,
 				C2A1062B29846D9F00895C10 /* HKBusFinder_ARApp.swift in Sources */,
 				C2A1063E2984739E00895C10 /* ARRouteView.swift in Sources */,
 				C286AB1B298A9BE10031B094 /* routeAvailable.swift in Sources */,

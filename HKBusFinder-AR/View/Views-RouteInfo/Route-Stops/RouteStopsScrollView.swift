@@ -17,20 +17,21 @@ struct RouteStopsScrollView: View {
                 ScrollView {
                     ForEach(matchRouteInfo.selectedRSInfo, id: \.self) { item in
                         Text("\(item.seq): \(item.stopInfo.name_en)")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color.gray)
-                        .onTapGesture {
-                            print("tapped on \(item.seq)")
-                            withAnimation {
-                                view.scrollTo(item, anchor: .center)
+                            .foregroundColor(Color.black)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Color.white)
+                            .onTapGesture {
+                                print("tapped on \(item.seq)")
+                                withAnimation {
+                                    view.scrollTo(item, anchor: .center)
+                                }
                             }
-                        }
-                        .padding(.horizontal)
+                            .padding(.horizontal)
                         
                         Divider()
                     }
                 }
-                .background(Color.gray)
+                .background(Color.white)
             }
         }
     }
