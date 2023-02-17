@@ -8,26 +8,41 @@
 import SwiftUI
 
 struct Nothing2View: View {
-    @State private var frameHeight: CGFloat = 400
+    @State private var isShowingDetailView = false
 
     var body: some View {
-        VStack(spacing: 0){
-            Color(.systemBlue)
-                .frame(height: frameHeight)
-            ZStack {
-                Color(.systemRed)
-                Button("change frame") {
+        ZStack {
+            Color.red
+            VStack {
+                Spacer()
+                Button("Show Detail View") {
+                    isShowingDetailView = true
+                }
+                Spacer()
+                if isShowingDetailView {
+                    DetailView(isPresented: $isShowingDetailView)
+                }
+            }
+        }
+    }
+}
+
+struct DetailView: View {
+    @Binding var isPresented: Bool
+
+    var body: some View {
+        ZStack {
+            Color.gray
+            VStack {
+                Text("Detail View")
+                Button("Close") {
                     withAnimation {
-                        if frameHeight == 400 {
-                            frameHeight = 600
-                        } else {
-                            frameHeight = 400
-                        }
+                        isPresented = false
                     }
                 }
             }
-            .ignoresSafeArea(.all, edges: .all)
         }
+        .frame(height: 400)
     }
 }
 

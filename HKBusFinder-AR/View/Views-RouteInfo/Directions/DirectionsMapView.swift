@@ -11,6 +11,7 @@ import MapKit
 
 struct DirectionsMapView: UIViewRepresentable {
     @EnvironmentObject var mapData: DirectionsMapViewModel
+    @ObservedObject var matchRouteInfo: MatchRouteInfo
     
     func makeCoordinator() -> Coordinator {
         return DirectionsMapView.Coordinator()
@@ -26,16 +27,18 @@ struct DirectionsMapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        //
+        // Add Pin When Region Set
+        if mapData.hasSetRegion && !mapData.pinAdded {
+            mapData.pinRouteStops(selectedRSInfo: matchRouteInfo.selectedRSInfo)
+        }
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
         // Render the route
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             let renderer = MKPolylineRenderer(overlay: overlay)
-            if overlay.title == "busDotLine" {
-                renderer.lineDashPattern = [2, 10]
-                renderer.strokeColor = .systemGray
+            if overlay.title == "busRouteLine" {
+                renderer.strokeColor = .systemRed
                 renderer.lineWidth = 3
                 return renderer
             }

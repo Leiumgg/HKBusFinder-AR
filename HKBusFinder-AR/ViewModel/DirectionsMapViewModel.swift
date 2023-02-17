@@ -64,10 +64,6 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     
     // Add Annotation: Stops of Selected Route & Destination
     func pinRouteStops(selectedRSInfo: [seqStopInfo]) {
-        mapView.setRegion(region, animated: false)
-        mapView.removeOverlays(mapView.overlays)
-        mapView.removeAnnotations(mapView.annotations)
-        
         // Add Annotation
         var busStopsPinList = [MKPointAnnotation]()
         for busStop in selectedRSInfo {
@@ -83,7 +79,9 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         busRouteLine.title = "busRouteLine"
         mapView.addOverlay(busRouteLine)
         
-        pinAdded = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.pinAdded = true
+        }
     }
     
     // Initailize Pin and Dotted Line
@@ -124,11 +122,6 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         
         getDirection(Source: realSrcCoord, Destination: busSrcCoord)
         getDirection(Source: busDesCoord, Destination: realDesCoord)
-        
-        // Draw Bus Line
-        let busDotLine = MKPolyline(coordinates: [busSrcCoord, busDesCoord], count: 2)
-        busDotLine.title = "busDotLine"
-        self.mapView.addOverlay(busDotLine)
     }
     
     // Focus Route

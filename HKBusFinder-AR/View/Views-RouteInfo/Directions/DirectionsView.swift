@@ -20,7 +20,7 @@ struct DirectionsView: View {
     
     var body: some View {
         ZStack {
-            DirectionsMapView()
+            DirectionsMapView(matchRouteInfo: matchRouteInfo)
                 .environmentObject(mapData)
                 .ignoresSafeArea(.all, edges: .top)
             
@@ -66,6 +66,9 @@ struct DirectionsView: View {
             mapData.busDesCoord = CLLocationCoordinate2D(latitude: Double(matchRouteInfo.chosenRoute[0].desRS.Stop.lat)!, longitude: Double(matchRouteInfo.chosenRoute[0].desRS.Stop.long)!)
             
             mapData.realDesCoord = matchRouteInfo.desCoord
+            
+            // Load Bus Stops Info in Sequence
+            matchRouteInfo.loadSeqStopInfo(routeRS: matchRouteInfo.chosenRoute[0].srcRS.routeStop)
         }
     }
 }

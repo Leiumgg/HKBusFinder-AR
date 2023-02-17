@@ -27,6 +27,7 @@ struct RouteInfo: View {
                 
                 Spacer()
                 
+                // Bottom Tab Bar in Navigation Style
                 HStack {
                     Button(action: { self.selectedTab = 0 }) {
                         VStack {
