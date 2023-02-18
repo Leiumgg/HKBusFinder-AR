@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RouteStopsScrollView: View {
+struct RouteStopsView: View {
     
     @ObservedObject var matchRouteInfo: MatchRouteInfo
     

@@ -24,7 +24,8 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     @Published var mapType: MKMapType = .standard
     
     // Route Coordinates
-    @Published var routeCoordinates = [CLLocationCoordinate2D]()
+    @Published var srcRouteCoordinates = [CLLocationCoordinate2D]()
+    @Published var desRouteCoordinates = [CLLocationCoordinate2D]()
     
     // Closest Route Node
     @Published var closestRouteCoordinateIndex = 0
@@ -159,7 +160,8 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     // Get Direction: User Location to Source Bus Stop
     func getDirection(Source: CLLocationCoordinate2D, Destination: CLLocationCoordinate2D) {
         
-        routeCoordinates = [CLLocationCoordinate2D]()
+        srcRouteCoordinates = [CLLocationCoordinate2D]()
+        desRouteCoordinates = [CLLocationCoordinate2D]()
         closestRouteCoordinateIndex = 0
         
         let p1 = MKPlacemark(coordinate: Source)
@@ -173,7 +175,6 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         let directions = MKDirections(request: request)
         directions.calculate { response, error in
             guard let route = response?.routes.first else {return}
-            self.routeCoordinates = route.polyline.coordinates
             /*
             for i in 0..<self.routeCoordinates.count {
                 print("\(i): \(self.routeCoordinates[i])")
@@ -181,8 +182,10 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
             print("Point Count: \(route.polyline.pointCount)")
             */
             if (Destination.latitude == self.busSrcCoord.latitude) && (Destination.longitude == self.busSrcCoord.longitude){
+                self.srcRouteCoordinates = route.polyline.coordinates
                 route.polyline.title = "To Bus Stop"
             } else {
+                self.desRouteCoordinates = route.polyline.coordinates
                 route.polyline.title = "To Destination"
             }
             self.hasRoute.append(route)
@@ -211,8 +214,8 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     }
     
     
+    // Checking Permissions
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        // Checking Permissions
         switch manager.authorizationStatus {
             case .denied:
                 // Alert
@@ -224,6 +227,7 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
                 // If Permission Given
                 manager.requestLocation()
                 manager.startUpdatingLocation()
+                manager.startUpdatingHeading()
             default:
                 ()
         }
@@ -249,10 +253,10 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
             initPinNDotLine()
         }
         checkTransitStatus()
-        
+        print("isToSrcBS: \(isToSrcBS); isOnBus: \(isOnBus); isToRealDes: \(isToRealDes)")
         // Find closest route node
             //change this later for better finding the closest node
-        /*
+        let routeCoordinates = isToSrcBS ? srcRouteCoordinates : isToRealDes ? desRouteCoordinates : [CLLocationCoordinate2D]()
         if !routeCoordinates.isEmpty {
             if closestRouteCoordinateIndex < routeCoordinates.count-1 {
                 let curLoc = CLLocation(latitude: routeCoordinates[closestRouteCoordinateIndex].latitude, longitude: routeCoordinates[closestRouteCoordinateIndex].longitude)
@@ -262,7 +266,7 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
                 }
             }
         }
-        */
+        
     }
     
 }

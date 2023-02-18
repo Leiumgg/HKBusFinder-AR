@@ -13,7 +13,7 @@ struct DirectionsView: View {
     @ObservedObject var matchRouteInfo: MatchRouteInfo
     
     // For Route Map Model
-    @StateObject var mapData = DirectionsMapViewModel()
+    @EnvironmentObject var mapData: DirectionsMapViewModel
     
     // Location Manager
     @State var locationManager = CLLocationManager()

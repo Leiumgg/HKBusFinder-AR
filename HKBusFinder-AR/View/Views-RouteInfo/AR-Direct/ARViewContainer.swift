@@ -9,10 +9,11 @@ import SwiftUI
 import RealityKit
 import ARKit
 import MapKit
-/*
+
 struct ARViewContainer: UIViewRepresentable {
-    
-    @EnvironmentObject var mapData: HomeMapViewModel
+    // PASS DATA TO ARMapViewModel
+    @EnvironmentObject var ARData: ARMapViewModel
+    @EnvironmentObject var mapData: DirectionsMapViewModel
     
     func makeUIView(context: Context) -> ARView {
         let view = ARView(frame: .zero)
@@ -26,11 +27,7 @@ struct ARViewContainer: UIViewRepresentable {
             config.sceneReconstruction = .mesh
         }
         session.run(config)
-        /*
-        //Handle ARSession via delegate
-        context.coordinator.view = view
-        session.delegate = context.coordinator
-        */
+        
         return view
     }
     
@@ -45,12 +42,12 @@ struct ARViewContainer: UIViewRepresentable {
         let color = UIColor.systemBlue
         let shader = SimpleMaterial(color: color, isMetallic: true)
         
-        for i in mapData.closestRouteCoordinateIndex-2..<mapData.closestRouteCoordinateIndex+3 {
-            if (i >= 0) && (i < mapData.routeCoordinates.count) {
+        for i in ARData.closestRouteCoordinateIndex-2..<ARData.closestRouteCoordinateIndex+3 {
+            if (i >= 0) && (i < ARData.routeCoordinates.count) {
                 let text = MeshResource.generateText("Step \(i)", extrusionDepth: 0.5, font: .systemFont(ofSize: 5))
                 let textEntity = ModelEntity(mesh: text, materials: [shader])
-                print("-----------\(i)-----------")
-                textEntity.position = calculateEntityPosition(entityCoordinate: mapData.routeCoordinates[i])
+                
+                textEntity.position = calculateEntityPosition(entityCoordinate: ARData.routeCoordinates[i])
                 anchor.addChild(textEntity)
             }
         }
@@ -58,7 +55,7 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func calculateEntityPosition(entityCoordinate: CLLocationCoordinate2D) -> SIMD3<Float> {
-        let userLocation = CLLocation(latitude: mapData.region.center.latitude, longitude: mapData.region.center.longitude)
+        let userLocation = CLLocation(latitude: ARData.region.center.latitude, longitude: ARData.region.center.longitude)
         let entityLocation = CLLocation(latitude: entityCoordinate.latitude, longitude: entityCoordinate.longitude)
         
         //Calculate distance of entity from user
@@ -80,4 +77,3 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
 }
-*/

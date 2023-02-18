@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RouteInfo: View {
+    @StateObject var mapData = DirectionsMapViewModel()
+    
     @ObservedObject var matchRouteInfo: MatchRouteInfo
     var chosenRoute: routeAvailable
     
@@ -22,6 +24,7 @@ struct RouteInfo: View {
                     VStack {
                         ZStack {
                             DirectionsView(matchRouteInfo: matchRouteInfo)
+                                .environmentObject(mapData)
                             
                             // Enlarge Map Button For "Route Info" Tab
                             if selectedTab == 1 {
@@ -43,13 +46,14 @@ struct RouteInfo: View {
                             }
                         }
                         if selectedTab == 1 {
-                            RouteStopsScrollView(matchRouteInfo: matchRouteInfo)
+                            RouteStopsView(matchRouteInfo: matchRouteInfo)
                                 .frame(height: bigMapForT1 ? 300 : 150)
                         }
                     }
                 } else {
                     // AR VIEW !!!!!!!!!
-                    Nothing2View()
+                    ARDirectView()
+                        .environmentObject(mapData)
                 }
                 
                 Spacer()
@@ -90,7 +94,7 @@ struct RouteInfo: View {
                         VStack {
                             Image(systemName: selectedTab == 2 ? "location.fill.viewfinder" : "location.viewfinder")
                                 .imageScale(.large)
-                            Text("AR Pointer")
+                            Text("AR Direct")
                                 .font(.caption2)
                         }
                         .foregroundColor(.gray)

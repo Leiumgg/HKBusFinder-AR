@@ -12,7 +12,7 @@
 		C27D45842990B35C008990E0 /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45832990B35C008990E0 /* DirectionsView.swift */; };
 		C27D458A2992EA26008990E0 /* DirectionsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45892992EA26008990E0 /* DirectionsMapViewModel.swift */; };
 		C27D458C2992EAAB008990E0 /* DirectionsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D458B2992EAAB008990E0 /* DirectionsMapView.swift */; };
-		C27D45922997915F008990E0 /* RouteStopsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45912997915F008990E0 /* RouteStopsScrollView.swift */; };
+		C27D45922997915F008990E0 /* RouteStopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45912997915F008990E0 /* RouteStopsView.swift */; };
 		C27D4594299830D1008990E0 /* seqStopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D4593299830D1008990E0 /* seqStopInfo.swift */; };
 		C286AB19298A51F00031B094 /* MatchRouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AB18298A51F00031B094 /* MatchRouteInfo.swift */; };
 		C286AB1B298A9BE10031B094 /* routeAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AB1A298A9BE10031B094 /* routeAvailable.swift */; };
@@ -22,8 +22,7 @@
 		C2A1063229846DA000895C10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A1063129846DA000895C10 /* Preview Assets.xcassets */; };
 		C2A106392984718D00895C10 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A106382984718D00895C10 /* Home.swift */; };
 		C2A1063C2984737000895C10 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1063B2984737000895C10 /* HomeMapView.swift */; };
-		C2A1063E2984739E00895C10 /* ARRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1063D2984739E00895C10 /* ARRouteView.swift */; };
-		C2A10640298473A900895C10 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1063F298473A900895C10 /* ARViewController.swift */; };
+		C2A10640298473A900895C10 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1063F298473A900895C10 /* ARViewContainer.swift */; };
 		C2A106432984740E00895C10 /* HomeMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A106422984740E00895C10 /* HomeMapViewModel.swift */; };
 		C2A106462984744100895C10 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A106452984744100895C10 /* Place.swift */; };
 		C2A106482984745F00895C10 /* routeCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A106472984745F00895C10 /* routeCoordinates.swift */; };
@@ -31,6 +30,9 @@
 		C2A1064E2986426000895C10 /* NothingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1064D2986426000895C10 /* NothingView.swift */; };
 		C2A106502986712A00895C10 /* stopsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1064F2986712A00895C10 /* stopsJson.swift */; };
 		C2A106522986750500895C10 /* routeStopsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A106512986750500895C10 /* routeStopsJson.swift */; };
+		C2C7765329A0C18E008E3595 /* ARMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C7765229A0C18E008E3595 /* ARMapViewModel.swift */; };
+		C2C7765529A0E668008E3595 /* ARDirectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C7765429A0E668008E3595 /* ARDirectView.swift */; };
+		C2C7765729A14050008E3595 /* ARMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C7765629A14050008E3595 /* ARMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +41,7 @@
 		C27D45832990B35C008990E0 /* DirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
 		C27D45892992EA26008990E0 /* DirectionsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsMapViewModel.swift; sourceTree = "<group>"; };
 		C27D458B2992EAAB008990E0 /* DirectionsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsMapView.swift; sourceTree = "<group>"; };
-		C27D45912997915F008990E0 /* RouteStopsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsScrollView.swift; sourceTree = "<group>"; };
+		C27D45912997915F008990E0 /* RouteStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsView.swift; sourceTree = "<group>"; };
 		C27D4593299830D1008990E0 /* seqStopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seqStopInfo.swift; sourceTree = "<group>"; };
 		C286AB18298A51F00031B094 /* MatchRouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRouteInfo.swift; sourceTree = "<group>"; };
 		C286AB1A298A9BE10031B094 /* routeAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeAvailable.swift; sourceTree = "<group>"; };
@@ -50,8 +52,7 @@
 		C2A1063129846DA000895C10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C2A106382984718D00895C10 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C2A1063B2984737000895C10 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapView.swift; sourceTree = "<group>"; };
-		C2A1063D2984739E00895C10 /* ARRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARRouteView.swift; sourceTree = "<group>"; };
-		C2A1063F298473A900895C10 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		C2A1063F298473A900895C10 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		C2A106422984740E00895C10 /* HomeMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapViewModel.swift; sourceTree = "<group>"; };
 		C2A106452984744100895C10 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C2A106472984745F00895C10 /* routeCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeCoordinates.swift; sourceTree = "<group>"; };
@@ -59,6 +60,9 @@
 		C2A1064D2986426000895C10 /* NothingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingView.swift; sourceTree = "<group>"; };
 		C2A1064F2986712A00895C10 /* stopsJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopsJson.swift; sourceTree = "<group>"; };
 		C2A106512986750500895C10 /* routeStopsJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeStopsJson.swift; sourceTree = "<group>"; };
+		C2C7765229A0C18E008E3595 /* ARMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARMapViewModel.swift; sourceTree = "<group>"; };
+		C2C7765429A0E668008E3595 /* ARDirectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDirectView.swift; sourceTree = "<group>"; };
+		C2C7765629A14050008E3595 /* ARMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			children = (
 				C27D458D299790A8008990E0 /* Directions */,
 				C27D458E299790EF008990E0 /* Route-Stops */,
+				C2C7764F29A0033E008E3595 /* AR-Direct */,
 			);
 			path = "Views-RouteInfo";
 			sourceTree = "<group>";
@@ -93,7 +98,7 @@
 		C27D458E299790EF008990E0 /* Route-Stops */ = {
 			isa = PBXGroup;
 			children = (
-				C27D45912997915F008990E0 /* RouteStopsScrollView.swift */,
+				C27D45912997915F008990E0 /* RouteStopsView.swift */,
 			);
 			path = "Route-Stops";
 			sourceTree = "<group>";
@@ -144,8 +149,6 @@
 				C2A1064B2985599C00895C10 /* RoutesSelect.swift */,
 				C27D457C2990B032008990E0 /* RouteInfo.swift */,
 				C27D457E2990B304008990E0 /* Views-RouteInfo */,
-				C2A1063D2984739E00895C10 /* ARRouteView.swift */,
-				C2A1063F298473A900895C10 /* ARViewController.swift */,
 				C2A1064D2986426000895C10 /* NothingView.swift */,
 				C27D457A298FA00A008990E0 /* Nothing2View.swift */,
 			);
@@ -157,6 +160,7 @@
 			children = (
 				C2A106422984740E00895C10 /* HomeMapViewModel.swift */,
 				C27D45892992EA26008990E0 /* DirectionsMapViewModel.swift */,
+				C2C7765229A0C18E008E3595 /* ARMapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -173,6 +177,16 @@
 				C286AB18298A51F00031B094 /* MatchRouteInfo.swift */,
 			);
 			path = "Struct&Class";
+			sourceTree = "<group>";
+		};
+		C2C7764F29A0033E008E3595 /* AR-Direct */ = {
+			isa = PBXGroup;
+			children = (
+				C2C7765429A0E668008E3595 /* ARDirectView.swift */,
+				C2A1063F298473A900895C10 /* ARViewContainer.swift */,
+				C2C7765629A14050008E3595 /* ARMapView.swift */,
+			);
+			path = "AR-Direct";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,19 +267,21 @@
 				C2A106502986712A00895C10 /* stopsJson.swift in Sources */,
 				C2A1063C2984737000895C10 /* HomeMapView.swift in Sources */,
 				C27D457D2990B032008990E0 /* RouteInfo.swift in Sources */,
+				C2C7765329A0C18E008E3595 /* ARMapViewModel.swift in Sources */,
 				C27D458C2992EAAB008990E0 /* DirectionsMapView.swift in Sources */,
 				C2A106392984718D00895C10 /* Home.swift in Sources */,
 				C2A106462984744100895C10 /* Place.swift in Sources */,
-				C2A10640298473A900895C10 /* ARViewController.swift in Sources */,
+				C2A10640298473A900895C10 /* ARViewContainer.swift in Sources */,
+				C2C7765529A0E668008E3595 /* ARDirectView.swift in Sources */,
 				C2A106482984745F00895C10 /* routeCoordinates.swift in Sources */,
-				C27D45922997915F008990E0 /* RouteStopsScrollView.swift in Sources */,
+				C27D45922997915F008990E0 /* RouteStopsView.swift in Sources */,
 				C2A1064E2986426000895C10 /* NothingView.swift in Sources */,
 				C2A106432984740E00895C10 /* HomeMapViewModel.swift in Sources */,
 				C2A1064C2985599C00895C10 /* RoutesSelect.swift in Sources */,
 				C2A106522986750500895C10 /* routeStopsJson.swift in Sources */,
 				C286AB19298A51F00031B094 /* MatchRouteInfo.swift in Sources */,
 				C2A1062B29846D9F00895C10 /* HKBusFinder_ARApp.swift in Sources */,
-				C2A1063E2984739E00895C10 /* ARRouteView.swift in Sources */,
+				C2C7765729A14050008E3595 /* ARMapView.swift in Sources */,
 				C286AB1B298A9BE10031B094 /* routeAvailable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
