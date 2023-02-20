@@ -34,6 +34,7 @@ struct DirectionsMapView: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
+        
         // Render the route
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             let renderer = MKPolylineRenderer(overlay: overlay)
@@ -54,7 +55,7 @@ struct DirectionsMapView: UIViewRepresentable {
             }
             
             let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-            switch annotation.title {
+            switch annotation.subtitle {
                 case "Get On":
                     annotationView.markerTintColor = .systemGreen
                 case "Get Off":

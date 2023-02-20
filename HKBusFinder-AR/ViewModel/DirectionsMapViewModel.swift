@@ -17,29 +17,26 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     @Published var region: MKCoordinateRegion!
     // Based on Location it will set up
     
+    // User Heading
+    @Published var userHeading: CLLocationDirection = 0
+    
     // Alert
     @Published var permissionDenied = false
     
     // Map Type
     @Published var mapType: MKMapType = .standard
     
+    // Walking Distance with Buffer
+    @Published var walkingDistance = 310.0
+    
     // Route Coordinates
     @Published var srcRouteCoordinates = [CLLocationCoordinate2D]()
     @Published var desRouteCoordinates = [CLLocationCoordinate2D]()
     
-    // Closest Route Node
-    @Published var closestRouteCoordinateIndex = 0
-    
-    // Bus Source Coordinate
+    // Key Annotation Coordinates
     @Published var busSrcCoord = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-    
-    // Bus Destination Coordinate
     @Published var busDesCoord = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-    
-    // Real Source Coordinate
     @Published var realSrcCoord = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-    
-    // Real Destination Coordinate
     @Published var realDesCoord = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
     // Is now walking to Real Destination or on Bus?
@@ -62,6 +59,18 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     // Going to Show What Route Next for focusRoute
     @Published var showToSrcRoute = true
     
+    // Select Pin on Direction Map and Scroll View
+    func selectPin(pinName: String) {
+        var selectedPin = [MKAnnotation]()
+        for i in mapView.annotations {
+            if i.title == pinName {
+                selectedPin.append(i)
+                break
+            }
+        }
+        mapView.selectAnnotation(selectedPin[0], animated: true)
+        mapView.setRegion(MKCoordinateRegion(center: selectedPin[0].coordinate, latitudinalMeters: 500, longitudinalMeters: 500), animated: true)
+    }
     
     // Add Annotation: Stops of Selected Route & Destination
     func pinRouteStops(selectedRSInfo: [seqStopInfo]) {
@@ -70,6 +79,11 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         for busStop in selectedRSInfo {
             let busStopPin = MKPointAnnotation()
             busStopPin.title = busStop.stopInfo.name_en
+            if (Double(busStop.stopInfo.lat)! == busSrcCoord.latitude) && (Double(busStop.stopInfo.long)! == busSrcCoord.longitude) {
+                busStopPin.subtitle = "Get On"
+            } else if (Double(busStop.stopInfo.lat)! == busDesCoord.latitude) && (Double(busStop.stopInfo.long)! == busDesCoord.longitude) {
+                busStopPin.subtitle = "Get Off"
+            }
             busStopPin.coordinate = CLLocationCoordinate2D(latitude: Double(busStop.stopInfo.lat)!, longitude: Double(busStop.stopInfo.long)!)
             busStopsPinList.append(busStopPin)
         }
@@ -99,24 +113,14 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         // realSrcAnnotation
         let realSrcAnnotation = MKPointAnnotation()
         realSrcAnnotation.coordinate = realSrcCoord
-        realSrcAnnotation.title = "Starting Point"
+        realSrcAnnotation.subtitle = "Starting Point"
         
         // realDesAnnotation
         let realDesAnnotation = MKPointAnnotation()
         realDesAnnotation.coordinate = realDesCoord
-        realDesAnnotation.title = "Destination"
+        realDesAnnotation.subtitle = "Destination"
         
-        // srcBSAnnotation
-        let srcBSAnnotation = MKPointAnnotation()
-        srcBSAnnotation.coordinate = busSrcCoord
-        srcBSAnnotation.title = "Get On"
-        
-        // desBSAnnotation
-        let desBSAnnotation = MKPointAnnotation()
-        desBSAnnotation.coordinate = busDesCoord
-        desBSAnnotation.title = "Get Off"
-        
-        keyAnnotations = [realSrcAnnotation, realDesAnnotation, srcBSAnnotation, desBSAnnotation]
+        keyAnnotations = [realSrcAnnotation, realDesAnnotation]
         
         // mapView.annotations = [MyLocation] + keyAnnotation
         self.mapView.addAnnotations(keyAnnotations)
@@ -140,13 +144,11 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     
     // Change isToRealDes Boolean Status
     func checkTransitStatus() {
-        if CLLocation(latitude: region.center.latitude, longitude: region.center.longitude).distance(from: CLLocation(latitude: realSrcCoord.latitude, longitude: realSrcCoord.longitude)) <= 310 {
-            /// 310 = Walking Distance + 10(buffer)
+        if CLLocation(latitude: region.center.latitude, longitude: region.center.longitude).distance(from: CLLocation(latitude: realSrcCoord.latitude, longitude: realSrcCoord.longitude)) <= walkingDistance {
             isToSrcBS = true
             isToRealDes = false
             isOnBus = false
-        } else if CLLocation(latitude: region.center.latitude, longitude: region.center.longitude).distance(from: CLLocation(latitude: realDesCoord.latitude, longitude: realDesCoord.longitude)) <= 310 {
-            /// 310 = Walking Distance + 10(buffer)
+        } else if CLLocation(latitude: region.center.latitude, longitude: region.center.longitude).distance(from: CLLocation(latitude: realDesCoord.latitude, longitude: realDesCoord.longitude)) <= walkingDistance {
             isToSrcBS = false
             isToRealDes = true
             isOnBus = false
@@ -162,7 +164,6 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         
         srcRouteCoordinates = [CLLocationCoordinate2D]()
         desRouteCoordinates = [CLLocationCoordinate2D]()
-        closestRouteCoordinateIndex = 0
         
         let p1 = MKPlacemark(coordinate: Source)
         let p2 = MKPlacemark(coordinate: Destination)
@@ -233,9 +234,15 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         }
     }
     
+    // For Error
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         // Error
         print(error.localizedDescription)
+    }
+    
+    // User Heading
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        //
     }
     
     // Getting User Region
@@ -254,19 +261,6 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         }
         checkTransitStatus()
         print("isToSrcBS: \(isToSrcBS); isOnBus: \(isOnBus); isToRealDes: \(isToRealDes)")
-        // Find closest route node
-            //change this later for better finding the closest node
-        let routeCoordinates = isToSrcBS ? srcRouteCoordinates : isToRealDes ? desRouteCoordinates : [CLLocationCoordinate2D]()
-        if !routeCoordinates.isEmpty {
-            if closestRouteCoordinateIndex < routeCoordinates.count-1 {
-                let curLoc = CLLocation(latitude: routeCoordinates[closestRouteCoordinateIndex].latitude, longitude: routeCoordinates[closestRouteCoordinateIndex].longitude)
-                let nextLoc = CLLocation(latitude: routeCoordinates[closestRouteCoordinateIndex+1].latitude, longitude: routeCoordinates[closestRouteCoordinateIndex+1].longitude)
-                if nextLoc.distance(from: location) < curLoc.distance(from: location){
-                    closestRouteCoordinateIndex += 1
-                }
-            }
-        }
-        
     }
     
 }

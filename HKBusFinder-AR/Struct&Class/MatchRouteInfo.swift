@@ -12,7 +12,7 @@ import CoreLocation
 class MatchRouteInfo: ObservableObject {
     
     // Walking Distance(Adjustable)
-    @Published var walkDistance = Double(300)
+    @Published var walkDistance = 300.0
     
     // From User Location and Place Search
     @Published var srcCoord = CLLocationCoordinate2D(latitude: 0, longitude: 0)
@@ -160,4 +160,5 @@ class MatchRouteInfo: ObservableObject {
         }
         routesAvailable = Array(Set(routesAvailable))
     }
+    
 }

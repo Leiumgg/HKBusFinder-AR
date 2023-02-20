@@ -25,6 +25,8 @@ struct ARMapView: UIViewRepresentable {
         view.isScrollEnabled = false
         view.isRotateEnabled = false
         
+        view.userTrackingMode = .followWithHeading
+        
         return view
     }
     

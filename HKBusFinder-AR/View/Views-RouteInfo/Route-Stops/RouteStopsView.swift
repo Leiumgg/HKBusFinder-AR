@@ -10,25 +10,38 @@ import SwiftUI
 struct RouteStopsView: View {
     
     @ObservedObject var matchRouteInfo: MatchRouteInfo
+    @EnvironmentObject var mapData: DirectionsMapViewModel
     
     var body: some View {
         VStack {
             ScrollViewReader { view in
                 ScrollView {
-                    ForEach(matchRouteInfo.selectedRSInfo, id: \.self) { item in
-                        Text("\(item.seq): \(item.stopInfo.name_en)")
-                            .foregroundColor(Color.black)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Color.white)
-                            .onTapGesture {
-                                print("tapped on \(item.seq)")
-                                withAnimation {
-                                    view.scrollTo(item, anchor: .center)
+                    VStack(spacing: 0) {
+                        ForEach(matchRouteInfo.selectedRSInfo, id: \.self) { item in
+                            ZStack {
+                                if item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop {
+                                    Color.green
+                                } else if item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop {
+                                    Color.orange
+                                } else {
+                                    Color.white
                                 }
+                                
+                                Text(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : "\(item.seq): \(item.stopInfo.name_en)")
+                                    .foregroundColor(Color.black)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .background(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? Color.green : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? Color.orange : Color.white)
+                                    .onTapGesture {
+                                        mapData.selectPin(pinName: item.stopInfo.name_en)
+                                        withAnimation {
+                                            view.scrollTo(item, anchor: .center)
+                                        }
+                                    }
+                                    .padding()
                             }
-                            .padding(.horizontal)
-                        
-                        Divider()
+                            
+                            Divider()
+                        }
                     }
                 }
                 .background(Color.white)

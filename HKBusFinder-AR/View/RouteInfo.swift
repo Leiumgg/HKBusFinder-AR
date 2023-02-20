@@ -48,6 +48,7 @@ struct RouteInfo: View {
                         if selectedTab == 1 {
                             RouteStopsView(matchRouteInfo: matchRouteInfo)
                                 .frame(height: bigMapForT1 ? 300 : 150)
+                                .environmentObject(mapData)
                         }
                     }
                 } else {
@@ -106,6 +107,9 @@ struct RouteInfo: View {
         }
         .onAppear {
             matchRouteInfo.chosenRoute = [chosenRoute]
+            
+            // Walking Distance + 10m buffer
+            mapData.walkingDistance = matchRouteInfo.walkDistance + 10
         }
     }
 }

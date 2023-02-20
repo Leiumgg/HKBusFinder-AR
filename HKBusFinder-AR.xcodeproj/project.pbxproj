@@ -45,6 +45,7 @@
 		C27D4593299830D1008990E0 /* seqStopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seqStopInfo.swift; sourceTree = "<group>"; };
 		C286AB18298A51F00031B094 /* MatchRouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRouteInfo.swift; sourceTree = "<group>"; };
 		C286AB1A298A9BE10031B094 /* routeAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeAvailable.swift; sourceTree = "<group>"; };
+		C294AACE29A37CFD00434474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C2A1062729846D9E00895C10 /* HKBusFinder-AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HKBusFinder-AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A1062A29846D9F00895C10 /* HKBusFinder_ARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKBusFinder_ARApp.swift; sourceTree = "<group>"; };
 		C2A1062C29846D9F00895C10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		C2A1062929846D9E00895C10 /* HKBusFinder-AR */ = {
 			isa = PBXGroup;
 			children = (
+				C294AACE29A37CFD00434474 /* Info.plist */,
 				C2A1062A29846D9F00895C10 /* HKBusFinder_ARApp.swift */,
 				C2A1062C29846D9F00895C10 /* ContentView.swift */,
 				C2A1063A2984735D00895C10 /* View */,
@@ -414,6 +416,7 @@
 				DEVELOPMENT_TEAM = HB572RL25G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HKBusFinder-AR/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Enable for AR Feature";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable for Live Location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,6 +448,7 @@
 				DEVELOPMENT_TEAM = HB572RL25G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HKBusFinder-AR/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Enable for AR Feature";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable for Live Location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

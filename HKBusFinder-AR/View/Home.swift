@@ -9,12 +9,17 @@ import SwiftUI
 import CoreLocation
 
 struct Home: View {
+    // Create MapViewModel
     @StateObject var mapData = HomeMapViewModel()
     // Location Manager
     @State var locationManager = CLLocationManager()
     
-    // set matchRouteInfo as Observed Object
+    // Set matchRouteInfo as Observed Object
     @ObservedObject var matchRouteInfo = MatchRouteInfo()
+    
+    // Slider Status and Value
+    @State private var showDistanceBar = false
+    @State private var walkingDistance = 300.0
     
     var body: some View {
         NavigationStack {
@@ -24,8 +29,35 @@ struct Home: View {
                     // mapData as environmentObject -> use in subView
                     .environmentObject(mapData)
                     .ignoresSafeArea(.all, edges: .all)
+                    .onTapGesture {
+                        withAnimation {
+                            showDistanceBar = false
+                        }
+                    }
+                
+                // Search Route Button
+                VStack {
+                    Spacer()
+                    
+                    // Navigate to Routes-Stops View
+                    NavigationLink(destination: RoutesSelect(matchRouteInfo: matchRouteInfo)) {
+                        HStack {
+                            Image(systemName: "location")
+                                .foregroundColor(.primary)
+                            Text("Routes")
+                                .foregroundColor(.primary)
+                        }
+                        .frame(width: 125, height: 45)
+                        .background(.ultraThinMaterial)
+                        .clipShape(Capsule())
+                    }
+                    .disabled(mapData.selectedPlace.isEmpty)
+                    .opacity(mapData.selectedPlace.isEmpty ? 0: 1)
+                    .padding()
+                }
                 
                 VStack {
+                    //Search Bar
                     VStack(spacing: 0) {
                         HStack {
                             Image(systemName: "magnifyingglass")
@@ -40,7 +72,6 @@ struct Home: View {
                                 Image(systemName: "xmark")
                                     .foregroundColor(.gray)
                             }
-
                         }
                         .padding(.vertical, 10)
                         .padding(.horizontal)
@@ -64,7 +95,6 @@ struct Home: View {
                                                 // Set the busStopNearby
                                                 matchRouteInfo.desCoord = place.placemark.location!.coordinate
                                                 matchRouteInfo.srcCoord = mapData.region.center
-                                                matchRouteInfo.busStopNearby()
                                             }
                                         
                                         Divider()
@@ -79,8 +109,8 @@ struct Home: View {
                     
                     Spacer()
                     
+                    // Button View
                     VStack {
-                        
                         Button(action: mapData.focusLocation) {
                             Image(systemName: "scope")
                                 .font(.system(size: 25))
@@ -88,36 +118,50 @@ struct Home: View {
                                 .background(Color.primary)
                                 .clipShape(Circle())
                         }
+                        .frame(maxWidth: .infinity, maxHeight: 50, alignment: .bottomTrailing)
                         
-                        Button(action: mapData.updateMapType) {
-                            Image(systemName: mapData.mapType == .standard ? "network" : "map")
-                                .font(.system(size: 30))
-                                .padding(10)
-                                .background(Color.primary)
-                                .clipShape(Circle())
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding()
-                }
-                
-                VStack {
-                    Spacer()
-                    
-                    // Navigate to Routes-Stops View
-                    NavigationLink(destination: RoutesSelect(matchRouteInfo: matchRouteInfo)) {
                         HStack {
-                            Image(systemName: "location")
-                                .foregroundColor(.primary)
-                            Text("Routes")
-                                .foregroundColor(.primary)
+                            if showDistanceBar {
+                                ZStack {
+                                    VStack(spacing: 0) {
+                                        Slider(value: $walkingDistance, in: 50...1000, step: 50.0)
+                                            .onChange(of: walkingDistance, perform: { newValue in
+                                                matchRouteInfo.walkDistance = newValue
+                                            })
+                                            .frame(width: 250)
+                                        Text(String(format: "%.fm", walkingDistance))
+                                            .foregroundColor(Color.blue)
+                                    }
+                                    .padding(.horizontal)
+                                    .background(Color.primary)
+                                    .clipShape(Capsule())
+                                }
+                                .frame(maxWidth: .infinity, alignment: .bottomLeading)
+                            } else {
+                                Button {
+                                    withAnimation {
+                                        showDistanceBar = true
+                                    }
+                                } label: {
+                                    Image(systemName: "figure.walk.circle")
+                                        .font(.system(size: 30))
+                                        .padding(10)
+                                        .background(Color.primary)
+                                        .clipShape(Circle())
+                                }
+                                .frame(maxWidth: .infinity, alignment: .bottomLeading)
+                            }
+                            
+                            Button(action: mapData.updateMapType) {
+                                Image(systemName: mapData.mapType == .standard ? "network" : "map")
+                                    .font(.system(size: 30))
+                                    .padding(10)
+                                    .background(Color.primary)
+                                    .clipShape(Circle())
+                            }
+                            .frame(maxWidth: .infinity, alignment: .bottomTrailing)
                         }
-                        .frame(width: 125, height: 45)
-                        .background(.ultraThinMaterial)
-                        .clipShape(Capsule())
                     }
-                    .disabled(mapData.selectedPlace.isEmpty)
-                    .opacity(mapData.selectedPlace.isEmpty ? 0: 1)
                     .padding()
                 }
             }
@@ -139,8 +183,7 @@ struct Home: View {
             }
             .onChange(of: mapData.searchTxt) { (value) in
                 // Searching Places
-                // You can use your own delay time to avoid Continous Search Request
-                let delay = 0.3
+                let delay = 0.2
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                     if value == mapData.searchTxt {
                         // Search
