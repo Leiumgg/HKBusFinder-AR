@@ -22,7 +22,6 @@ struct DirectionsView: View {
         ZStack {
             DirectionsMapView(matchRouteInfo: matchRouteInfo)
                 .environmentObject(mapData)
-                .ignoresSafeArea(.all, edges: .top)
             
             VStack {
                 Spacer()

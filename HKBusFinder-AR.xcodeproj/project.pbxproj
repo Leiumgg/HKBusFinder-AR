@@ -16,6 +16,8 @@
 		C27D4594299830D1008990E0 /* seqStopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D4593299830D1008990E0 /* seqStopInfo.swift */; };
 		C286AB19298A51F00031B094 /* MatchRouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AB18298A51F00031B094 /* MatchRouteInfo.swift */; };
 		C286AB1B298A9BE10031B094 /* routeAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286AB1A298A9BE10031B094 /* routeAvailable.swift */; };
+		C294AAD129A6325400434474 /* routePageLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C294AAD029A6325400434474 /* routePageLink.swift */; };
+		C294AAD329A6629100434474 /* busETAJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C294AAD229A6629100434474 /* busETAJson.swift */; };
 		C2A1062B29846D9F00895C10 /* HKBusFinder_ARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1062A29846D9F00895C10 /* HKBusFinder_ARApp.swift */; };
 		C2A1062D29846D9F00895C10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1062C29846D9F00895C10 /* ContentView.swift */; };
 		C2A1062F29846DA000895C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A1062E29846DA000895C10 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		C286AB18298A51F00031B094 /* MatchRouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRouteInfo.swift; sourceTree = "<group>"; };
 		C286AB1A298A9BE10031B094 /* routeAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeAvailable.swift; sourceTree = "<group>"; };
 		C294AACE29A37CFD00434474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C294AAD029A6325400434474 /* routePageLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routePageLink.swift; sourceTree = "<group>"; };
+		C294AAD229A6629100434474 /* busETAJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busETAJson.swift; sourceTree = "<group>"; };
 		C2A1062729846D9E00895C10 /* HKBusFinder-AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HKBusFinder-AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A1062A29846D9F00895C10 /* HKBusFinder_ARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKBusFinder_ARApp.swift; sourceTree = "<group>"; };
 		C2A1062C29846D9F00895C10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		C27D457E2990B304008990E0 /* Views-RouteInfo */ = {
 			isa = PBXGroup;
 			children = (
+				C27D457C2990B032008990E0 /* RouteInfo.swift */,
 				C27D458D299790A8008990E0 /* Directions */,
 				C27D458E299790EF008990E0 /* Route-Stops */,
 				C2C7764F29A0033E008E3595 /* AR-Direct */,
@@ -102,6 +107,15 @@
 				C27D45912997915F008990E0 /* RouteStopsView.swift */,
 			);
 			path = "Route-Stops";
+			sourceTree = "<group>";
+		};
+		C294AACF29A6322800434474 /* Views-RoutesSelect */ = {
+			isa = PBXGroup;
+			children = (
+				C2A1064B2985599C00895C10 /* RoutesSelect.swift */,
+				C294AAD029A6325400434474 /* routePageLink.swift */,
+			);
+			path = "Views-RoutesSelect";
 			sourceTree = "<group>";
 		};
 		C2A1061E29846D9E00895C10 = {
@@ -148,8 +162,7 @@
 			children = (
 				C2A106382984718D00895C10 /* Home.swift */,
 				C2A1063B2984737000895C10 /* HomeMapView.swift */,
-				C2A1064B2985599C00895C10 /* RoutesSelect.swift */,
-				C27D457C2990B032008990E0 /* RouteInfo.swift */,
+				C294AACF29A6322800434474 /* Views-RoutesSelect */,
 				C27D457E2990B304008990E0 /* Views-RouteInfo */,
 				C2A1064D2986426000895C10 /* NothingView.swift */,
 				C27D457A298FA00A008990E0 /* Nothing2View.swift */,
@@ -174,6 +187,7 @@
 				C2A106472984745F00895C10 /* routeCoordinates.swift */,
 				C2A1064F2986712A00895C10 /* stopsJson.swift */,
 				C2A106512986750500895C10 /* routeStopsJson.swift */,
+				C294AAD229A6629100434474 /* busETAJson.swift */,
 				C27D4593299830D1008990E0 /* seqStopInfo.swift */,
 				C286AB1A298A9BE10031B094 /* routeAvailable.swift */,
 				C286AB18298A51F00031B094 /* MatchRouteInfo.swift */,
@@ -269,6 +283,7 @@
 				C2A106502986712A00895C10 /* stopsJson.swift in Sources */,
 				C2A1063C2984737000895C10 /* HomeMapView.swift in Sources */,
 				C27D457D2990B032008990E0 /* RouteInfo.swift in Sources */,
+				C294AAD129A6325400434474 /* routePageLink.swift in Sources */,
 				C2C7765329A0C18E008E3595 /* ARMapViewModel.swift in Sources */,
 				C27D458C2992EAAB008990E0 /* DirectionsMapView.swift in Sources */,
 				C2A106392984718D00895C10 /* Home.swift in Sources */,
@@ -281,6 +296,7 @@
 				C2A106432984740E00895C10 /* HomeMapViewModel.swift in Sources */,
 				C2A1064C2985599C00895C10 /* RoutesSelect.swift in Sources */,
 				C2A106522986750500895C10 /* routeStopsJson.swift in Sources */,
+				C294AAD329A6629100434474 /* busETAJson.swift in Sources */,
 				C286AB19298A51F00031B094 /* MatchRouteInfo.swift in Sources */,
 				C2A1062B29846D9F00895C10 /* HKBusFinder_ARApp.swift in Sources */,
 				C2C7765729A14050008E3595 /* ARMapView.swift in Sources */,

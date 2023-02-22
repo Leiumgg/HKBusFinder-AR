@@ -14,30 +14,20 @@ struct RoutesSelect: View {
     
     @State private var srcName = ""
     @State private var desName = ""
+    @State var travelTime = 0
     
     var body: some View {
-        
+        // Until this Deleted, Keep Command+Z
         List(matchRouteInfo.routesAvailable, id: \.self) {item in
-            NavigationLink(destination: RouteInfo(matchRouteInfo: matchRouteInfo, chosenRoute: item)) {
-                HStack {
-                    Text(item.srcRS.routeStop.route).padding(.trailing)
-                    VStack(alignment: .leading) {
-                        Text(item.srcRS.Stop.name_en)
-                        Text(item.desRS.Stop.name_en)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("ETA")
-                        .foregroundColor(.green)
-                }
-            }
+            routePageLink(matchRouteInfo: matchRouteInfo, item: item)
         }
-        // For Search Adjustment
+        // Show Search Info
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("🟢 \(srcName)")
-                        Text("🟠 \(desName)")
+                        Text("🔵 \(srcName)")
+                        Text("🔴 \(desName)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     Text("🚶\(matchRouteInfo.walkDistance, specifier: "%.f")m")
@@ -65,18 +55,18 @@ struct RoutesSelect: View {
         let geocoder = CLGeocoder()
         
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
-                guard error == nil else {
-                    print("Reverse geocoding error: \(error!.localizedDescription)")
-                    completion(nil)
-                    return
-                }
-                if let placemark = placemarks?.first {
-                    let placeName = placemark.name ?? placemark.locality ?? placemark.subLocality ?? placemark.administrativeArea ?? placemark.country
-                    completion(placeName)
-                } else {
-                    completion(nil)
-                }
+            guard error == nil else {
+                print("Reverse geocoding error: \(error!.localizedDescription)")
+                completion(nil)
+                return
             }
+            if let placemark = placemarks?.first {
+                let placeName = placemark.name ?? placemark.locality ?? placemark.subLocality ?? placemark.administrativeArea ?? placemark.country
+                completion(placeName)
+            } else {
+                completion(nil)
+            }
+        }
     }
 }
 
@@ -85,4 +75,3 @@ struct RoutesSelect_Previews: PreviewProvider {
         RoutesSelect(matchRouteInfo: MatchRouteInfo())
     }
 }
-

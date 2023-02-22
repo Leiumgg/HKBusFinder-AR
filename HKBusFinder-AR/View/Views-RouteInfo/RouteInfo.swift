@@ -105,8 +105,36 @@ struct RouteInfo: View {
                 .padding(.horizontal)
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                VStack(alignment: .trailing) {
+                    HStack {
+                        Image(systemName: "clock")
+                            .foregroundColor(Color.red)
+                            .fontWeight(.bold)
+                        if !matchRouteInfo.srcStopETA.isEmpty {
+                            let dateFormatter = ISO8601DateFormatter()
+                            let dateString = matchRouteInfo.srcStopETA.first!.eta
+                            if let date = dateFormatter.date(from: dateString) {
+                                let timeInterval = date.timeIntervalSinceNow / 60
+                                Text("\(timeInterval.rounded(.down), specifier: "%.f")min")
+                            }
+                        }
+                        
+                        Image(systemName: "bus.doubledecker.fill")
+                            .foregroundColor(Color.red)
+                        Text(chosenRoute.srcRS.routeStop.route)
+                    }
+                }
+            }
+        }
         .onAppear {
             matchRouteInfo.chosenRoute = [chosenRoute]
+            
+            matchRouteInfo.loadSrcETAData(stopID: chosenRoute.srcRS.Stop.stop, route: chosenRoute.srcRS.routeStop.route, serviceType: chosenRoute.srcRS.routeStop.service_type)
+            Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+                matchRouteInfo.loadSrcETAData(stopID: chosenRoute.srcRS.Stop.stop, route: chosenRoute.srcRS.routeStop.route, serviceType: chosenRoute.srcRS.routeStop.service_type)
+            }
             
             // Walking Distance + 10m buffer
             mapData.walkingDistance = matchRouteInfo.walkDistance + 10

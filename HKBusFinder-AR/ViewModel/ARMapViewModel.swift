@@ -97,10 +97,10 @@ class ARMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         
         //use location.altitude to get the sea level information for ar entity y-axis
-        self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.coordinate.latitude+0.00025, longitude: location.coordinate.longitude), latitudinalMeters: 100, longitudinalMeters: 100)
+        self.region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 100, longitudinalMeters: 100)
         
         // Center User Location Viewing Region
-        self.mapView.setRegion(self.region, animated: true)
+        self.mapView.setRegion(self.region, animated: false)
         
         // Smooth Animations
         self.mapView.setVisibleMapRect(self.mapView.visibleMapRect, animated: true)

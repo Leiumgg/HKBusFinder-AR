@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+import MapKit
 
 class MatchRouteInfo: ObservableObject {
     
@@ -34,6 +35,9 @@ class MatchRouteInfo: ObservableObject {
     
     // EDIT!!
     @Published var chosenRoute = [routeAvailable]()
+    
+    // Source Bus Stop ETA
+    @Published var srcStopETA = [etaResult]()
     
     // Load Bus Stops Info of Selected Route by Local Array Loop
     func loadSeqStopInfo(routeRS: routeResult) {
@@ -80,6 +84,68 @@ class MatchRouteInfo: ObservableObject {
             }
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()
+    }
+    
+    // loadSrcETAData from JSON URL
+    func loadSrcETAData(stopID: String, route: String, serviceType: String) {
+        guard let url = URL(string: "https://data.etabus.gov.hk/v1/transport/kmb/eta/\(stopID)/\(route)/\(serviceType)") else {
+            print("Invalid URL")
+            return
+        }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { fdata, response, error in
+            if let fdata = fdata {
+                if let decodedResponse = try? JSONDecoder().decode(etaResponse.self, from: fdata) {
+                    DispatchQueue.main.async {
+                        self.srcStopETA = decodedResponse.data
+                    }
+                    return
+                }
+            }
+            print(url)
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
+    }
+    
+    // MapKit Calculate Transit ETA
+    func MKTransitETA(p1: MKPlacemark, p2: MKPlacemark, completion: @escaping (Int) -> Void){
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: p1)
+        request.destination = MKMapItem(placemark: p2)
+        request.transportType = .transit
+        
+        let directions = MKDirections(request: request)
+        directions.calculateETA { response, error in
+            if error == nil {
+                if let estimate = response {
+                    let mkTransitEta = Int((estimate.expectedTravelTime/60).rounded(.up))
+                    completion(mkTransitEta)
+                }
+            }
+        }
+    }
+    
+    // MapKit Calculate Walking ETA
+    func MKWalkingETA(p1: MKPlacemark, p2: MKPlacemark, completion: @escaping (Int) -> Void){
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: p1)
+        request.destination = MKMapItem(placemark: p2)
+        request.transportType = .walking
+        
+        let directions = MKDirections(request: request)
+        directions.calculateETA { response, error in
+            if error == nil {
+                if let estimate = response {
+                    let mkTransitEta = Int((estimate.expectedTravelTime/60).rounded(.up))
+                    completion(mkTransitEta)
+                }
+            }
+        }
+    }
+    
+    // loadRouteStopETA
+    func loadRouteStopETA(route: routeAvailable) {
+        
     }
     
     // loadRouteStopsData from JSON URL
