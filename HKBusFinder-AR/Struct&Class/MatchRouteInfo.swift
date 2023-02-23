@@ -39,6 +39,9 @@ class MatchRouteInfo: ObservableObject {
     // Source Bus Stop ETA
     @Published var srcStopETA = [etaResult]()
     
+    // Route Stop ETA
+    @Published var routeStopETA = [etaResult]()
+    
     // Load Bus Stops Info of Selected Route by Local Array Loop
     func loadSeqStopInfo(routeRS: routeResult) {
         selectedRSs = [routeResult]()
@@ -82,6 +85,27 @@ class MatchRouteInfo: ObservableObject {
                     return
                 }
             }
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
+    }
+    
+    // loadRouteStopETA
+    func loadRouteStopETA(stopID: String, route: String, serviceType: String) {
+        guard let url = URL(string: "https://data.etabus.gov.hk/v1/transport/kmb/eta/\(stopID)/\(route)/\(serviceType)") else {
+            print("Invalid URL")
+            return
+        }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { fdata, response, error in
+            if let fdata = fdata {
+                if let decodedResponse = try? JSONDecoder().decode(etaResponse.self, from: fdata) {
+                    DispatchQueue.main.async {
+                        self.routeStopETA = decodedResponse.data
+                    }
+                    return
+                }
+            }
+            print(url)
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()
     }
@@ -141,11 +165,6 @@ class MatchRouteInfo: ObservableObject {
                 }
             }
         }
-    }
-    
-    // loadRouteStopETA
-    func loadRouteStopETA(route: routeAvailable) {
-        
     }
     
     // loadRouteStopsData from JSON URL

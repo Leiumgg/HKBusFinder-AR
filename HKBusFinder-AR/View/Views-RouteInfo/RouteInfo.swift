@@ -109,16 +109,22 @@ struct RouteInfo: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 VStack(alignment: .trailing) {
                     HStack {
-                        Image(systemName: "clock")
-                            .foregroundColor(Color.red)
-                            .fontWeight(.bold)
-                        if !matchRouteInfo.srcStopETA.isEmpty {
-                            let dateFormatter = ISO8601DateFormatter()
-                            let dateString = matchRouteInfo.srcStopETA.first!.eta
-                            if let date = dateFormatter.date(from: dateString) {
-                                let timeInterval = date.timeIntervalSinceNow / 60
-                                Text("\(timeInterval.rounded(.down), specifier: "%.f")min")
+                        if mapData.isToSrcBS {
+                            Image(systemName: "clock")
+                                .foregroundColor(Color.red)
+                                .fontWeight(.bold)
+                            if !matchRouteInfo.srcStopETA.isEmpty {
+                                let dateFormatter = ISO8601DateFormatter()
+                                let dateString = matchRouteInfo.srcStopETA.first!.eta
+                                if let date = dateFormatter.date(from: dateString ?? "") {
+                                    let timeInterval = date.timeIntervalSinceNow / 60
+                                    Text("\(timeInterval.rounded(.down), specifier: "%.f")min")
+                                }
                             }
+                        } else if mapData.isToRealDes {
+                            Text("Off Bus")
+                        } else {
+                            Text("On Bus")
                         }
                         
                         Image(systemName: "bus.doubledecker.fill")

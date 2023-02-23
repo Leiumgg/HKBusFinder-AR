@@ -12,33 +12,24 @@ struct RouteStopsView: View {
     @ObservedObject var matchRouteInfo: MatchRouteInfo
     @EnvironmentObject var mapData: DirectionsMapViewModel
     
+    @State var expandItem = [seqStopInfo]()
+    
     var body: some View {
         VStack {
             ScrollViewReader { view in
                 ScrollView {
                     VStack(spacing: 0) {
                         ForEach(matchRouteInfo.selectedRSInfo, id: \.self) { item in
-                            ZStack {
-                                if item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop {
-                                    Color.green
-                                } else if item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop {
-                                    Color.orange
-                                } else {
-                                    Color.white
-                                }
-                                
-                                Text(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : "\(item.seq): \(item.stopInfo.name_en)")
-                                    .foregroundColor(Color.black)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .background(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? Color.green : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? Color.orange : Color.white)
-                                    .onTapGesture {
-                                        mapData.selectPin(pinName: item.stopInfo.name_en)
-                                        withAnimation {
-                                            view.scrollTo(item, anchor: .center)
-                                        }
+                            StopInfoView(matchRouteInfo: matchRouteInfo, view: view, item: item, expandItem: expandItem)
+                                .environmentObject(mapData)
+                                .onTapGesture {
+                                    mapData.selectPin(pinName: item.stopInfo.name_en)
+                                    withAnimation {
+                                        view.scrollTo(item, anchor: .center)
+                                        expandItem = [item]
                                     }
-                                    .padding()
-                            }
+                                    matchRouteInfo.loadRouteStopETA(stopID: item.stopInfo.stop, route: matchRouteInfo.chosenRoute[0].srcRS.routeStop.route, serviceType: matchRouteInfo.chosenRoute[0].srcRS.routeStop.service_type)
+                                }
                             
                             Divider()
                         }
@@ -51,38 +42,54 @@ struct RouteStopsView: View {
     
 }
 
-/*
-struct ExpandingView: View {
+struct StopInfoView: View {
+    @State var stopExpandETA = false
     
-    @State var isExpanded = false
-    var id: Int
-    var proxy: ScrollViewProxy
+    @ObservedObject var matchRouteInfo: MatchRouteInfo
+    @EnvironmentObject var mapData: DirectionsMapViewModel
+    
+    var view: ScrollViewProxy
+    var item: seqStopInfo
+    var expandItem: [seqStopInfo]
+    
     var body: some View {
-        VStack {
-            Text("Hello!")
-            if isExpanded {
-                Text("World")
+        VStack(spacing: 0) {
+            ZStack {
+                if item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop {
+                    Color.green
+                } else if item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop {
+                    Color.orange
+                } else {
+                    Color.white
+                }
+                
+                Text(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : "\(item.seq): \(item.stopInfo.name_en)")
+                    .foregroundColor(Color.black)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? Color.green : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? Color.orange : Color.white)
+                    .padding()
             }
-        }
-        .onTapGesture {
-            withAnimation {
-                isExpanded.toggle()
-                proxy.scrollTo(id, anchor: .center)
-            }
-        }
-    }
-}
-struct TestScrollView: View {
-    var body: some View {
-        ScrollViewReader { view in
-            ScrollView {
-                ForEach(0...100, id: \.self) { id in
-                    ExpandingView(id: id, proxy: view)
-                        .id(id)
-                        .padding()
+            
+            if !expandItem.isEmpty {
+                if expandItem[0] == item {
+                    VStack {
+                        ForEach(matchRouteInfo.routeStopETA, id: \.self) { etaItem in
+                            VStack(alignment: .leading) {
+                                let dateFormatter = ISO8601DateFormatter()
+                                let dateString = matchRouteInfo.srcStopETA.first!.eta
+                                if let date = dateFormatter.date(from: dateString ?? "") {
+                                    let timeInverval = (date.timeIntervalSinceNow/60).rounded(.down)
+                                    Text("\(etaItem.rmk_en == "" ? "Estimated Time" : etaItem.rmk_en): \(timeInverval, specifier: "%.f")min")
+                                        .padding()
+                                        .foregroundColor(.black)
+                                } else {
+                                    Text("--")
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
-*/

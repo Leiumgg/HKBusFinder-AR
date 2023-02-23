@@ -17,6 +17,6 @@ struct etaResult: Hashable, Codable {
     var service_type: Int
     var seq: Int
     var eta_seq: Int
-    var eta: String
+    var eta: String?
     var rmk_en: String
 }
