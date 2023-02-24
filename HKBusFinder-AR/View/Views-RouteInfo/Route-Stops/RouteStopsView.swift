@@ -12,7 +12,7 @@ struct RouteStopsView: View {
     @ObservedObject var matchRouteInfo: MatchRouteInfo
     @EnvironmentObject var mapData: DirectionsMapViewModel
     
-    @State var expandItem = [seqStopInfo]()
+    @State var expandItem = seqStopInfo(seq: 0, stopInfo: stopResult(stop: "", name_en: "", lat: "", long: ""))
     
     var body: some View {
         VStack {
@@ -26,7 +26,7 @@ struct RouteStopsView: View {
                                     mapData.selectPin(pinName: item.stopInfo.name_en)
                                     withAnimation {
                                         view.scrollTo(item, anchor: .center)
-                                        expandItem = [item]
+                                        expandItem = item
                                     }
                                     matchRouteInfo.loadRouteStopETA(stopID: item.stopInfo.stop, route: matchRouteInfo.chosenRoute[0].srcRS.routeStop.route, serviceType: matchRouteInfo.chosenRoute[0].srcRS.routeStop.service_type)
                                 }
@@ -50,7 +50,7 @@ struct StopInfoView: View {
     
     var view: ScrollViewProxy
     var item: seqStopInfo
-    var expandItem: [seqStopInfo]
+    var expandItem: seqStopInfo
     
     var body: some View {
         VStack(spacing: 0) {
@@ -63,33 +63,35 @@ struct StopInfoView: View {
                     Color.white
                 }
                 
-                Text(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : "\(item.seq): \(item.stopInfo.name_en)")
-                    .foregroundColor(Color.black)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? Color.green : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? Color.orange : Color.white)
-                    .padding()
-            }
-            
-            if !expandItem.isEmpty {
-                if expandItem[0] == item {
-                    VStack {
-                        ForEach(matchRouteInfo.routeStopETA, id: \.self) { etaItem in
-                            VStack(alignment: .leading) {
-                                let dateFormatter = ISO8601DateFormatter()
-                                let dateString = matchRouteInfo.srcStopETA.first!.eta
-                                if let date = dateFormatter.date(from: dateString ?? "") {
-                                    let timeInverval = (date.timeIntervalSinceNow/60).rounded(.down)
-                                    Text("\(etaItem.rmk_en == "" ? "Estimated Time" : etaItem.rmk_en): \(timeInverval, specifier: "%.f")min")
-                                        .padding()
-                                        .foregroundColor(.black)
-                                } else {
-                                    Text("--")
+                VStack {
+                    Text(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? "\(item.seq): \(item.stopInfo.name_en)" : "\(item.seq): \(item.stopInfo.name_en)")
+                        .foregroundColor(Color.black)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(item.stopInfo.stop == matchRouteInfo.chosenRoute[0].srcRS.Stop.stop ? Color.green : item.stopInfo.stop == matchRouteInfo.chosenRoute[0].desRS.Stop.stop ? Color.orange : Color.white)
+                        .padding()
+                    
+                    
+                    if expandItem == item {
+                        VStack {
+                            ForEach(matchRouteInfo.routeStopETA, id: \.self) { etaItem in
+                                VStack(alignment: .leading) {
+                                    let dateFormatter = ISO8601DateFormatter()
+                                    let dateString = etaItem.eta
+                                    if let date = dateFormatter.date(from: dateString ?? "") {
+                                        let timeInverval = (date.timeIntervalSinceNow/60).rounded(.down)
+                                        Text("\(etaItem.rmk_en == "" ? "Estimated Time" : etaItem.rmk_en): \(timeInverval, specifier: "%.f")min")
+                                            .foregroundColor(.black)
+                                    } else {
+                                        Text("-- --")
+                                            .foregroundColor(.black)
+                                    }
                                 }
+                                .padding([.bottom,.horizontal])
                             }
                         }
                     }
-                }
-            }
-        }
+                } // VStack
+            } // ZStack
+        } //VStack(spacing: 0)
     }
 }

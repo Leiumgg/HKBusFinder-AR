@@ -118,7 +118,7 @@ struct RouteInfo: View {
                                 let dateString = matchRouteInfo.srcStopETA.first!.eta
                                 if let date = dateFormatter.date(from: dateString ?? "") {
                                     let timeInterval = date.timeIntervalSinceNow / 60
-                                    Text("\(timeInterval.rounded(.down), specifier: "%.f")min")
+                                    Text("\(timeInterval.rounded(.down), specifier: "%.f") min")
                                 }
                             }
                         } else if mapData.isToRealDes {

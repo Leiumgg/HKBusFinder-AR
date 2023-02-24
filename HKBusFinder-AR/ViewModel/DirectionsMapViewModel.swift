@@ -176,12 +176,7 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         let directions = MKDirections(request: request)
         directions.calculate { response, error in
             guard let route = response?.routes.first else {return}
-            /*
-            for i in 0..<self.routeCoordinates.count {
-                print("\(i): \(self.routeCoordinates[i])")
-            }
-            print("Point Count: \(route.polyline.pointCount)")
-            */
+            
             if (Destination.latitude == self.busSrcCoord.latitude) && (Destination.longitude == self.busSrcCoord.longitude){
                 self.srcRouteCoordinates = route.polyline.coordinates
                 route.polyline.title = "To Bus Stop"

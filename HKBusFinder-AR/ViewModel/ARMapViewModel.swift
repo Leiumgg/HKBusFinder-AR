@@ -22,20 +22,48 @@ class ARMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     // Route Coordinates
     @Published var routeCoordinates = [CLLocationCoordinate2D]()
     
+    // Route Step Instruction
+    @Published var routeInstruction = [String]()
+    @Published var routeStepsCoords = [CLLocationCoordinate2D]()
+    
     // Closest Route Node
-    @Published var closestRouteCoordinateIndex = 0
+    @Published var closestRouteCoordIndex = 0
+    
+    // Updated Walking ETA to Destination
+    @Published var newDesETA = 0
     
     // Destination Coordinate
     @Published var desCoord = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
+    // Set jor Region Mei
+    @Published var hasSetRegion = false
+    
 
+    // MapKit Calculate Walking ETA
+    func MKWalkingETA(p1: MKPlacemark, p2: MKPlacemark, completion: @escaping (Int) -> Void){
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: p1)
+        request.destination = MKMapItem(placemark: p2)
+        request.transportType = .walking
+        
+        let directions = MKDirections(request: request)
+        directions.calculateETA { response, error in
+            if error == nil {
+                if let estimate = response {
+                    let mkTransitEta = Int((estimate.expectedTravelTime/60).rounded(.up))
+                    completion(mkTransitEta)
+                }
+            }
+        }
+    }
+    
     // Get Direction: User Location to Source Bus Stop
     func getDirection(Source: CLLocationCoordinate2D, Destination: CLLocationCoordinate2D) {
         
         mapView.removeOverlays(mapView.overlays)
         mapView.removeAnnotations(mapView.annotations)
         routeCoordinates = [CLLocationCoordinate2D]()
-        closestRouteCoordinateIndex = 0
+        closestRouteCoordIndex = 0
         
         let p1 = MKPlacemark(coordinate: Source)
         let p2 = MKPlacemark(coordinate: Destination)
@@ -55,11 +83,11 @@ class ARMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         directions.calculate { response, error in
             guard let route = response?.routes.first else {return}
             
-            self.routeCoordinates = route.polyline.coordinates
+            self.routeCoordinates = route.steps.map {$0.polyline.coordinate}
             self.mapView.addOverlay(route.polyline)
+            
+            self.routeInstruction = route.steps.map {$0.instructions}
         }
-        // DEBUG
-        for i in 0..<routeCoordinates.count {print("\(i): \(routeCoordinates[i])")}
         
     }
     
@@ -105,14 +133,24 @@ class ARMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         // Smooth Animations
         self.mapView.setVisibleMapRect(self.mapView.visibleMapRect, animated: true)
         
+        if !hasSetRegion {
+            hasSetRegion = true
+            MKWalkingETA(p1: MKPlacemark(coordinate: region.center), p2: MKPlacemark(coordinate: desCoord)) { desETA in
+                self.newDesETA = desETA
+            }
+        }
+        
         // Find closest route node
             //change this later for better finding the closest node
         if !routeCoordinates.isEmpty {
-            if closestRouteCoordinateIndex < routeCoordinates.count-1 {
-                let curLoc = CLLocation(latitude: routeCoordinates[closestRouteCoordinateIndex].latitude, longitude: routeCoordinates[closestRouteCoordinateIndex].longitude)
-                let nextLoc = CLLocation(latitude: routeCoordinates[closestRouteCoordinateIndex+1].latitude, longitude: routeCoordinates[closestRouteCoordinateIndex+1].longitude)
+            if closestRouteCoordIndex < routeCoordinates.count-1 {
+                let curLoc = CLLocation(latitude: routeCoordinates[closestRouteCoordIndex].latitude, longitude: routeCoordinates[closestRouteCoordIndex].longitude)
+                let nextLoc = CLLocation(latitude: routeCoordinates[closestRouteCoordIndex+1].latitude, longitude: routeCoordinates[closestRouteCoordIndex+1].longitude)
                 if nextLoc.distance(from: location) < curLoc.distance(from: location){
-                    closestRouteCoordinateIndex += 1
+                    closestRouteCoordIndex += 1
+                    MKWalkingETA(p1: MKPlacemark(coordinate: region.center), p2: MKPlacemark(coordinate: desCoord)) { desETA in
+                        self.newDesETA = desETA
+                    }
                 }
             }
         }

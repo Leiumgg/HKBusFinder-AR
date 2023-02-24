@@ -31,7 +31,24 @@ struct ARDirectView: View {
                 }
             
             VStack(spacing: 0) {
+                HStack {
+                    if !ARData.routeInstruction.isEmpty {
+                        Text("\(ARData.routeInstruction[ARData.closestRouteCoordIndex])")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                    } else {
+                        Text("--")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                    }
+                    Text("🚶 \(ARData.newDesETA) min")
+                        .padding()
+                }
+                .background(Color.gray.opacity(0.5))
+                .padding()
+                
                 Spacer()
+                
                 ARMapView()
                     .environmentObject(ARData)
                     .frame(height: 200)
