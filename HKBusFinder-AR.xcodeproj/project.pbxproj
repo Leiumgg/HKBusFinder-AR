@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C242E57129ACE91A0097F7F3 /* HomeSheetBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242E57029ACE91A0097F7F3 /* HomeSheetBottom.swift */; };
+		C242E57329ACE9F00097F7F3 /* SheetStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242E57229ACE9F00097F7F3 /* SheetStruct.swift */; };
+		C242E57529ACEB110097F7F3 /* HomeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242E57429ACEB110097F7F3 /* HomeSheetView.swift */; };
 		C27D457B298FA00A008990E0 /* Nothing2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D457A298FA00A008990E0 /* Nothing2View.swift */; };
 		C27D457D2990B032008990E0 /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D457C2990B032008990E0 /* RouteInfo.swift */; };
 		C27D45842990B35C008990E0 /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D45832990B35C008990E0 /* DirectionsView.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C242E57029ACE91A0097F7F3 /* HomeSheetBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSheetBottom.swift; sourceTree = "<group>"; };
+		C242E57229ACE9F00097F7F3 /* SheetStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetStruct.swift; sourceTree = "<group>"; };
+		C242E57429ACEB110097F7F3 /* HomeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSheetView.swift; sourceTree = "<group>"; };
 		C27D457A298FA00A008990E0 /* Nothing2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nothing2View.swift; sourceTree = "<group>"; };
 		C27D457C2990B032008990E0 /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
 		C27D45832990B35C008990E0 /* DirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
@@ -81,6 +87,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C242E56F29ACE8CB0097F7F3 /* Views-Home */ = {
+			isa = PBXGroup;
+			children = (
+				C2A106382984718D00895C10 /* Home.swift */,
+				C2A1063B2984737000895C10 /* HomeMapView.swift */,
+				C242E57429ACEB110097F7F3 /* HomeSheetView.swift */,
+				C242E57029ACE91A0097F7F3 /* HomeSheetBottom.swift */,
+				C242E57229ACE9F00097F7F3 /* SheetStruct.swift */,
+			);
+			path = "Views-Home";
+			sourceTree = "<group>";
+		};
 		C27D457E2990B304008990E0 /* Views-RouteInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +178,7 @@
 		C2A1063A2984735D00895C10 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C2A106382984718D00895C10 /* Home.swift */,
-				C2A1063B2984737000895C10 /* HomeMapView.swift */,
+				C242E56F29ACE8CB0097F7F3 /* Views-Home */,
 				C294AACF29A6322800434474 /* Views-RoutesSelect */,
 				C27D457E2990B304008990E0 /* Views-RouteInfo */,
 				C2A1064D2986426000895C10 /* NothingView.swift */,
@@ -284,6 +301,7 @@
 				C2A1063C2984737000895C10 /* HomeMapView.swift in Sources */,
 				C27D457D2990B032008990E0 /* RouteInfo.swift in Sources */,
 				C294AAD129A6325400434474 /* routePageLink.swift in Sources */,
+				C242E57529ACEB110097F7F3 /* HomeSheetView.swift in Sources */,
 				C2C7765329A0C18E008E3595 /* ARMapViewModel.swift in Sources */,
 				C27D458C2992EAAB008990E0 /* DirectionsMapView.swift in Sources */,
 				C2A106392984718D00895C10 /* Home.swift in Sources */,
@@ -295,11 +313,13 @@
 				C2A1064E2986426000895C10 /* NothingView.swift in Sources */,
 				C2A106432984740E00895C10 /* HomeMapViewModel.swift in Sources */,
 				C2A1064C2985599C00895C10 /* RoutesSelect.swift in Sources */,
+				C242E57129ACE91A0097F7F3 /* HomeSheetBottom.swift in Sources */,
 				C2A106522986750500895C10 /* routeStopsJson.swift in Sources */,
 				C294AAD329A6629100434474 /* busETAJson.swift in Sources */,
 				C286AB19298A51F00031B094 /* MatchRouteInfo.swift in Sources */,
 				C2A1062B29846D9F00895C10 /* HKBusFinder_ARApp.swift in Sources */,
 				C2C7765729A14050008E3595 /* ARMapView.swift in Sources */,
+				C242E57329ACE9F00097F7F3 /* SheetStruct.swift in Sources */,
 				C286AB1B298A9BE10031B094 /* routeAvailable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

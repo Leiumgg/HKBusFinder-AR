@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreLocation
+import MapKit
 
 struct Home: View {
     // Create MapViewModel
@@ -26,7 +27,6 @@ struct Home: View {
             ZStack {
                 // MapView
                 HomeMapView()
-                    // mapData as environmentObject -> use in subView
                     .environmentObject(mapData)
                     .ignoresSafeArea(.all, edges: .all)
                     .onTapGesture {
@@ -34,27 +34,6 @@ struct Home: View {
                             showDistanceBar = false
                         }
                     }
-                
-                // Search Route Button
-                VStack {
-                    Spacer()
-                    
-                    // Navigate to Routes-Stops View
-                    NavigationLink(destination: RoutesSelect(matchRouteInfo: matchRouteInfo)) {
-                        HStack {
-                            Image(systemName: "location")
-                                .foregroundColor(.primary)
-                            Text("Routes")
-                                .foregroundColor(.primary)
-                        }
-                        .frame(width: 125, height: 45)
-                        .background(.ultraThinMaterial)
-                        .clipShape(Capsule())
-                    }
-                    .disabled(mapData.selectedPlace.isEmpty)
-                    .opacity(mapData.selectedPlace.isEmpty ? 0: 1)
-                    .padding()
-                }
                 
                 VStack {
                     //Search Bar
@@ -68,6 +47,8 @@ struct Home: View {
                             
                             Button {
                                 mapData.searchTxt = ""
+                                mapData.clearSearch()
+                                mapData.mapView.removeAnnotations(matchRouteInfo.desStopsPin)
                             } label: {
                                 Image(systemName: "xmark")
                                     .foregroundColor(.gray)
@@ -95,6 +76,9 @@ struct Home: View {
                                                 // Set the busStopNearby
                                                 matchRouteInfo.desCoord = place.placemark.location!.coordinate
                                                 matchRouteInfo.srcCoord = mapData.region.center
+                                                matchRouteInfo.busStopNearby()
+                                                mapData.mapView.removeAnnotations(mapData.mapView.annotations)
+                                                mapData.mapView.addAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
                                             }
                                         
                                         Divider()
@@ -162,8 +146,16 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .bottomTrailing)
                         }
                     }
-                    .padding()
+                    .offset(y: -100)
+                    .padding(.horizontal)
                 }
+                
+                // Bottom Sheet
+                GeometryReader { proxy -> AnyView in
+                    let height = proxy.frame(in: .global).height
+                    return AnyView(HomeSheetView(height: height, matchRouteInfo: matchRouteInfo).environmentObject(mapData))
+                }
+                .ignoresSafeArea(.all, edges: .bottom)
             }
             .onAppear {
                 // Setting Delegate
@@ -174,6 +166,27 @@ struct Home: View {
                 matchRouteInfo.loadStopsData()
                 matchRouteInfo.loadRouteStopsData()
             }
+            // Get BusStopNearby
+            .onChange(of: matchRouteInfo.allStops.count, perform: { newValue in
+                matchRouteInfo.srcCoord = mapData.region.center
+                matchRouteInfo.busStopNearby()
+                mapData.mapView.removeAnnotations(mapData.mapView.annotations)
+                mapData.mapView.addAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
+            })
+            // Get BusStopNearby
+            .onChange(of: mapData.hasSetRegion, perform: { newValue in
+                matchRouteInfo.srcCoord = mapData.region.center
+                matchRouteInfo.busStopNearby()
+                mapData.mapView.removeAnnotations(mapData.mapView.annotations)
+                mapData.mapView.addAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
+            })
+            // Get BusStopNearby
+            .onChange(of: walkingDistance, perform: { newValue in
+                matchRouteInfo.srcCoord = mapData.region.center
+                matchRouteInfo.busStopNearby()
+                mapData.mapView.removeAnnotations(mapData.mapView.annotations)
+                mapData.mapView.addAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
+            })
             // Permission Denied Alert
             .alert(isPresented: $mapData.permissionDenied) {
                 Alert(title: Text("Permission Denied"), message: Text("Please Enable Permission In App Settings"), dismissButton: .default(Text("Go to Settings"), action: {
@@ -181,8 +194,8 @@ struct Home: View {
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                 }))
             }
+            // Searching Places
             .onChange(of: mapData.searchTxt) { (value) in
-                // Searching Places
                 let delay = 0.2
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                     if value == mapData.searchTxt {
@@ -192,11 +205,5 @@ struct Home: View {
                 }
             }
         }
-    }
-}
-
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
     }
 }

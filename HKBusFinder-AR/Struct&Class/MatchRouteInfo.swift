@@ -26,6 +26,8 @@ class MatchRouteInfo: ObservableObject {
     // From busStopNearby
     @Published var srcStops = [stopResult]()
     @Published var desStops = [stopResult]()
+    @Published var srcStopsPin = [MKPointAnnotation]()
+    @Published var desStopsPin = [MKPointAnnotation]()
     
     @Published var routesAvailable = [routeAvailable]()
     
@@ -33,7 +35,7 @@ class MatchRouteInfo: ObservableObject {
     @Published var selectedRSs = [routeResult]()
     @Published var selectedRSInfo = [seqStopInfo]()
     
-    // EDIT!!
+    // To Store Chosen Route
     @Published var chosenRoute = [routeAvailable]()
     
     // Source Bus Stop ETA
@@ -41,6 +43,30 @@ class MatchRouteInfo: ObservableObject {
     
     // Route Stop ETA
     @Published var routeStopETA = [etaResult]()
+    
+    // All ETA of A Bus Stop
+    @Published var stopAllETA = [etaResult]()
+    
+    // Load All ETA of One Bus Stop
+    func loadStopAllETA(stop: String) {
+        guard let url = URL(string: "https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/\(stop)") else {
+            print("Invalid URL")
+            return
+        }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { fdata, response, error in
+            if let fdata = fdata {
+                if let decodedResponse = try? JSONDecoder().decode(etaResponse.self, from: fdata) {
+                    DispatchQueue.main.async {
+                        self.stopAllETA = decodedResponse.data
+                    }
+                    return
+                }
+            }
+            print(url)
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
+    }
     
     // Load Bus Stops Info of Selected Route by Local Array Loop
     func loadSeqStopInfo(routeRS: routeResult) {
@@ -191,6 +217,8 @@ class MatchRouteInfo: ObservableObject {
     func busStopNearby() {
         srcStops = [stopResult]()
         desStops = [stopResult]()
+        srcStopsPin = [MKPointAnnotation]()
+        desStopsPin = [MKPointAnnotation]()
         
         let srcLocation = CLLocation(latitude: srcCoord.latitude, longitude: srcCoord.longitude)
         let desLocation = CLLocation(latitude: desCoord.latitude, longitude: desCoord.longitude)
@@ -200,10 +228,22 @@ class MatchRouteInfo: ObservableObject {
             
             if (srcLocation.distance(from: stopLocation) <= walkDistance) {
                 srcStops.append(loopStop)
+                
+                let pointAnnotation = MKPointAnnotation()
+                pointAnnotation.title = loopStop.name_en
+                pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: Double(loopStop.lat)!, longitude: Double(loopStop.long)!)
+                pointAnnotation.subtitle = loopStop.stop
+                srcStopsPin.append(pointAnnotation)
             }
             
             if (desLocation.distance(from: stopLocation) <= walkDistance) {
                 desStops.append(loopStop)
+                
+                let pointAnnotation = MKPointAnnotation()
+                pointAnnotation.title = loopStop.name_en
+                pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: Double(loopStop.lat)!, longitude: Double(loopStop.long)!)
+                pointAnnotation.subtitle = loopStop.stop
+                desStopsPin.append(pointAnnotation)
             }
         }
         
@@ -224,26 +264,25 @@ class MatchRouteInfo: ObservableObject {
             for srcStop in srcStops {
                 if (routeStop.stop == srcStop.stop) {
                     routeStopsAtSrc.append(arrRouteStop(routeStop: routeStop, Stop: srcStop))
+                    break
                 }
             }
             for desStop in desStops {
                 if (routeStop.stop == desStop.stop) {
                     routeStopsAtDes.append(arrRouteStop(routeStop: routeStop, Stop: desStop))
+                    break
                 }
             }
         }
-        routeStopsAtSrc = Array(Set(routeStopsAtSrc))
-        routeStopsAtDes = Array(Set(routeStopsAtDes))
         
         // If Route Pass through Scr & Des -> routeAvailable
         for RsAtSrc in routeStopsAtSrc {
             for RsAtDes in routeStopsAtDes {
-                if (RsAtSrc.routeStop.route == RsAtDes.routeStop.route) && (RsAtSrc.routeStop.bound == RsAtDes.routeStop.bound) && (RsAtSrc.routeStop.service_type == RsAtDes.routeStop.service_type) && (Int(RsAtSrc.routeStop.seq)! < Int(RsAtDes.routeStop.seq)!) {
+                if (RsAtSrc.routeStop.route == RsAtDes.routeStop.route) && (RsAtSrc.routeStop.bound == RsAtDes.routeStop.bound) && (Int(RsAtSrc.routeStop.service_type) == 1) && (Int(RsAtDes.routeStop.service_type) == 1) && (Int(RsAtSrc.routeStop.seq)! < Int(RsAtDes.routeStop.seq)!) { // Service Type only Consider: 1
                     routesAvailable.append(routeAvailable(srcRS: RsAtSrc, desRS: RsAtDes))
                 }
             }
         }
-        routesAvailable = Array(Set(routesAvailable))
     }
     
 }

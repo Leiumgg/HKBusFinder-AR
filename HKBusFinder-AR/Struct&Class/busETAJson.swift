@@ -13,9 +13,10 @@ struct etaResponse: Codable {
 
 struct etaResult: Hashable, Codable {
     var route: String
-    var dir:String
+    var dir: String
     var service_type: Int
     var seq: Int
+    var dest_en: String
     var eta_seq: Int
     var eta: String?
     var rmk_en: String

@@ -14,7 +14,7 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var mapView = MKMapView()
     
     // Region
-    @Published var region: MKCoordinateRegion!
+    @Published var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), latitudinalMeters: 500, longitudinalMeters: 500)
     // Based on Location it will set up
     
     // Alert
@@ -32,6 +32,9 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     // Selected Place
     @Published var selectedPlace: [MKPointAnnotation] = []
     
+    // SelectedPin
+    @Published var selectedPin = MKPointAnnotation()
+    
     // Route Coordinates
     @Published var routeCoordinates: [CLLocationCoordinate2D] = []
     
@@ -39,12 +42,10 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var closestRouteCoordinateIndex = 0
     
     // Check Set jor Region Mei
-    private var hasSetRegion = false
+    @Published var hasSetRegion = false
     
     // Clear Search
     func clearSearch() {
-        mapView.removeAnnotations(mapView.annotations)
-        mapView.removeOverlays(mapView.overlays)
         selectedPlace = [MKPointAnnotation]()
     }
     
@@ -62,7 +63,7 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Focus Location
     func focusLocation() {
-        guard let _ = region else { return }
+        //guard let _ = region else { return }
         
         mapView.setRegion(region, animated: true)
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
@@ -85,6 +86,26 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     
+    // Search For Place Name
+    func getPlaceName(coord: CLLocationCoordinate2D, completion: @escaping (String?) -> Void) {
+        let location = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            guard error == nil else {
+                print("Reverse geocoding error: \(error!.localizedDescription)")
+                completion(nil)
+                return
+            }
+            if let placemark = placemarks?.first {
+                let placeName = placemark.name ?? placemark.locality ?? placemark.subLocality ?? placemark.administrativeArea ?? placemark.country
+                completion(placeName)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
     // Pick Search Result
     func selectPlace(place: Place) {
         // Showing Pin on Map
@@ -94,7 +115,8 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         let pointAnnotation = MKPointAnnotation()
         pointAnnotation.coordinate = coordinate
-        pointAnnotation.title = place.placemark.name ?? "No Name"
+        pointAnnotation.title = place.placemark.name ?? "Destination"
+        pointAnnotation.subtitle = "Destination"
         
         selectedPlace = [MKPointAnnotation]()
         selectedPlace.append(pointAnnotation)
@@ -110,6 +132,13 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
+    }
+    
+    // Select Pin on Direction Map and Scroll View
+    func selectPin(pin: MKPointAnnotation) {
+        selectedPin = pin
+        mapView.selectAnnotation(selectedPin, animated: true)
+        mapView.setRegion(MKCoordinateRegion(center: selectedPin.coordinate, latitudinalMeters: 500, longitudinalMeters: 500), animated: true)
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

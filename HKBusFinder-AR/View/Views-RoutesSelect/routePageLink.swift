@@ -24,13 +24,16 @@ struct routePageLink: View {
                     .padding(.trailing)
                 VStack(alignment: .leading) {
                     Text(item.srcRS.Stop.name_en)
+                        .font(.caption)
+                    Divider()
                     Text(item.desRS.Stop.name_en)
+                        .font(.caption)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack {
-                    Text("🚌 \(travelTime) min")
-                    Text("🚶 \(srcWalkTime+desWalkTime) min")
+                    Text("🚌\(travelTime) min")
+                    Text("🚶\(srcWalkTime+desWalkTime) min")
                 }
             }
         }
