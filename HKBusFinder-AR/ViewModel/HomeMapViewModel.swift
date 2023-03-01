@@ -22,7 +22,7 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Map Type
     @Published var mapType: MKMapType = .standard
-    
+        
     // SearchText
     @Published var searchTxt = ""
     
@@ -46,12 +46,12 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Clear Search
     func clearSearch() {
+        mapView.removeAnnotation(selectedPlace[0])
         selectedPlace = [MKPointAnnotation]()
     }
     
     // Updating Map Type
     func updateMapType() {
-        
         if mapType == .standard {
             mapType = .hybrid
             mapView.mapType = mapType
@@ -63,9 +63,13 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Focus Location
     func focusLocation() {
-        //guard let _ = region else { return }
-        
         mapView.setRegion(region, animated: true)
+        mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
+    }
+    
+    // Focus Location
+    func focusDestination() {
+        mapView.setRegion(MKCoordinateRegion(center: selectedPlace[0].coordinate, latitudinalMeters: 500, longitudinalMeters: 500), animated: true)
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
     }
     

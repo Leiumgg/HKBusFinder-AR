@@ -24,16 +24,22 @@ struct HomeSheetBottom: View {
     @State var expandItem = MKPointAnnotation()
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HStack {
                 Picker("Picker", selection: $selectedTab) {
                     ForEach(tabList, id: \.self) { item in
                         Text("\(item == 0 ? "Pick a Location" : item == 1 ? "Your Location" : "\(mapData.selectedPlace[0].title!)")")
                     }
                 }
+                .tint(.white)
+                .frame(maxWidth: .infinity)
                 
                 Text("\(selectedTab == 1 ? "\(matchRouteInfo.srcStops.count)" : selectedTab == 2 ? "\(mapData.selectedPlace.isEmpty ? "--" : "\(matchRouteInfo.desStops.count)")" : "--") Stops Nearby")
+                    .foregroundColor(Color.white)
+                    .padding(.horizontal)
             }
+            
+            Divider()
             
             ScrollViewReader { view in
                 ScrollView {
@@ -70,59 +76,46 @@ struct StopETAView: View {
     var expandItem: MKPointAnnotation
     
     var body: some View {
-        VStack(spacing: 0) {
-            ZStack {
-                VStack {
-                    HStack {
-                        Text("\(item.title!)")
-                            .foregroundColor(Color.white)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
-                        
-                        Text("\(CLLocation(latitude: mapData.region.center.latitude, longitude: mapData.region.center.longitude).distance(from: CLLocation(latitude: item.coordinate.latitude, longitude: item.coordinate.longitude)), specifier: "%.f")m")
-                            .foregroundColor(Color.white)
-                            .padding()
-                    }
+        ZStack {
+            VStack {
+                HStack {
+                    Text("\(item.title!)")
+                        .foregroundColor(Color.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
                     
-                    if mapData.selectedPin == item {
-                        VStack {
-                            ForEach(matchRouteInfo.stopAllETA, id: \.self) { etaItem in
-                                VStack(alignment: .leading) {
-                                    let dateFormatter = ISO8601DateFormatter()
-                                    let dateString = etaItem.eta
-                                    if let date = dateFormatter.date(from: dateString ?? "") {
-                                        let timeInverval = (date.timeIntervalSinceNow/60).rounded(.down)
-                                        HStack {
-                                            Text("\(etaItem.route)")
-                                                .fontWeight(.bold)
-                                            
-                                            Text("To \(etaItem.dest_en)")
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                            
-                                            Text("\(timeInverval, specifier: "%.f") min")
-                                        }
-                                    } else {
-                                        HStack {
-                                            Text("\(etaItem.route)")
-                                                .fontWeight(.bold)
-                                            
-                                            Text("To \(etaItem.dest_en)")
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                            
-                                            Text("--")
-                                        }
-                                    }
+                    Text("\(CLLocation(latitude: mapData.region.center.latitude, longitude: mapData.region.center.longitude).distance(from: CLLocation(latitude: item.coordinate.latitude, longitude: item.coordinate.longitude)), specifier: "%.f")m")
+                        .foregroundColor(Color.white)
+                        .padding()
+                }
+                
+                if mapData.selectedPin == item {
+                    VStack {
+                        ForEach(matchRouteInfo.stopAllETA, id: \.self) { etaItem in
+                            VStack(alignment: .leading) {
+                                let date = ISO8601DateFormatter().date(from: etaItem.eta ?? "")
+                                HStack {
+                                    Text("\(etaItem.route)")
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.white)
+                                    
+                                    Text("To \(etaItem.dest_en)")
+                                        .foregroundColor(Color.white)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    
+                                    Text("\(date == nil ? Double.nan : date!.timeIntervalSinceNow/60.rounded(.down), specifier: "%.f") min")
+                                        .foregroundColor(Color.white)
                                 }
-                                .padding()
                             }
+                            .padding()
                         }
-                        .background(BlurView(style: .dark)
-                            .clipShape(CustomCorner(corners: [], radius: 0))
-                        )
                     }
-                } // VStack
-            } // ZStack
-        } //VStack(spacing: 0)
+                    .background(BlurView(style: .dark)
+                        .clipShape(CustomCorner(corners: [], radius: 0))
+                    )
+                }
+            } // VStack
+        } // ZStack
     }
 }
 

@@ -49,28 +49,42 @@ struct HomeSheetView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     } else {
-                        NavigationLink(destination: RoutesSelect(matchRouteInfo: matchRouteInfo).environmentObject(mapData)) {
-                            HStack {
-                                Text("Route: ")
-                                    .font(.headline)
-                                    .colorScheme(.dark)
+                        HStack {
+                            NavigationLink(destination: RoutesSelect(matchRouteInfo: matchRouteInfo).environmentObject(mapData)) {
                                 
-                                Text("\(mapData.selectedPlace[0].title ?? "Destination")")
-                                    .colorScheme(.dark)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                
-                                Image(systemName: "location.fill")
-                                    .font(.title3)
+                                HStack {
+                                    Image(systemName: "location.fill")
+                                        .font(.title3)
+                                    
+                                    Text("\(mapData.selectedPlace[0].title ?? "Destination")")
+                                        .colorScheme(.dark)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                }
+                                .contentShape(Rectangle())
                             }
-                            .contentShape(Rectangle())
+                            .buttonStyle(PlainButtonStyle())
+                            .padding(.vertical, 10)
+                            .padding(.horizontal)
+                            .colorScheme(.dark)
+                            .background(BlurView(style: .dark)
+                                .clipShape(CustomCorner(corners: [.allCorners], radius: 10))
+                            )
+                            
+                            Button {
+                                mapData.focusDestination()
+                            } label: {
+                                Image(systemName: "mappin.circle")
+                                    .font(.title)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .colorScheme(.dark)
+                            .padding(.vertical, 6)
+                            .padding(.horizontal)
+                            .background(BlurView(style: .dark)
+                                .clipShape(CustomCorner(corners: [.allCorners], radius: 10))
+                            )
+
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        .padding(.vertical, 10)
-                        .padding(.horizontal)
-                        .colorScheme(.dark)
-                        .background(BlurView(style: .dark)
-                            .clipShape(CustomCorner(corners: [.allCorners], radius: 10))
-                        )
                     }
                 }
                 .frame(height: 100)

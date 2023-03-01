@@ -51,6 +51,7 @@ struct HomeMapView: UIViewRepresentable {
             switch annotation.subtitle {
                 case "Destination":
                     annotationView.markerTintColor = .systemRed
+                    annotationView.displayPriority = .required
                 default:
                     annotationView.markerTintColor = .systemOrange
             }

@@ -67,6 +67,7 @@ struct Home: View {
                                             .foregroundColor(.black)
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .padding(.leading)
+                                            .contentShape(Rectangle())
                                             .onTapGesture {
                                                 mapData.selectPlace(place: place)
                                                 
@@ -74,10 +75,10 @@ struct Home: View {
                                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                                                 
                                                 // Set the busStopNearby
+                                                mapData.mapView.removeAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
                                                 matchRouteInfo.desCoord = place.placemark.location!.coordinate
                                                 matchRouteInfo.srcCoord = mapData.region.center
                                                 matchRouteInfo.busStopNearby()
-                                                mapData.mapView.removeAnnotations(mapData.mapView.annotations)
                                                 mapData.mapView.addAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
                                             }
                                         
@@ -168,23 +169,23 @@ struct Home: View {
             }
             // Get BusStopNearby
             .onChange(of: matchRouteInfo.allStops.count, perform: { newValue in
+                mapData.mapView.removeAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
                 matchRouteInfo.srcCoord = mapData.region.center
                 matchRouteInfo.busStopNearby()
-                mapData.mapView.removeAnnotations(mapData.mapView.annotations)
                 mapData.mapView.addAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
             })
             // Get BusStopNearby
             .onChange(of: mapData.hasSetRegion, perform: { newValue in
+                mapData.mapView.removeAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
                 matchRouteInfo.srcCoord = mapData.region.center
                 matchRouteInfo.busStopNearby()
-                mapData.mapView.removeAnnotations(mapData.mapView.annotations)
                 mapData.mapView.addAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
             })
             // Get BusStopNearby
             .onChange(of: walkingDistance, perform: { newValue in
+                mapData.mapView.removeAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
                 matchRouteInfo.srcCoord = mapData.region.center
                 matchRouteInfo.busStopNearby()
-                mapData.mapView.removeAnnotations(mapData.mapView.annotations)
                 mapData.mapView.addAnnotations(matchRouteInfo.srcStopsPin + matchRouteInfo.desStopsPin)
             })
             // Permission Denied Alert

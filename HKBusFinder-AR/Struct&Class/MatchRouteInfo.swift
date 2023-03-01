@@ -58,7 +58,7 @@ class MatchRouteInfo: ObservableObject {
             if let fdata = fdata {
                 if let decodedResponse = try? JSONDecoder().decode(etaResponse.self, from: fdata) {
                     DispatchQueue.main.async {
-                        self.stopAllETA = decodedResponse.data
+                        self.stopAllETA = decodedResponse.data.filter {$0.eta_seq == 1}
                     }
                     return
                 }
