@@ -59,6 +59,10 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     // Going to Show What Route Next for focusRoute
     @Published var showToSrcRoute = true
     
+    // Just Hold the Formated ETA Value
+    @Published var formattedETA = -1
+    
+    
     // Select Pin on Direction Map and Scroll View
     func selectPin(pinName: String) {
         var selectedPin = [MKAnnotation]()

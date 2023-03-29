@@ -79,7 +79,7 @@ struct StopInfoView: View {
                                     let dateString = etaItem.eta
                                     if let date = dateFormatter.date(from: dateString ?? "") {
                                         let timeInverval = (date.timeIntervalSinceNow/60).rounded(.down)
-                                        Text("\(etaItem.rmk_en == "" ? "Estimated Time" : etaItem.rmk_en): \(timeInverval, specifier: "%.f")min")
+                                        Text("\(etaItem.rmk_en == "" ? "Estimated Time" : etaItem.rmk_en): \(timeInverval, specifier: "%.f") min")
                                             .foregroundColor(.black)
                                     } else {
                                         Text("-- --")

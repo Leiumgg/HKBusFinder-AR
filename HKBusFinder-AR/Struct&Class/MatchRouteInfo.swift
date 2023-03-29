@@ -28,6 +28,8 @@ class MatchRouteInfo: ObservableObject {
     @Published var desStops = [stopResult]()
     @Published var srcStopsPin = [MKPointAnnotation]()
     @Published var desStopsPin = [MKPointAnnotation]()
+    @Published var routeStopsAtSrc = [arrRouteStop]()
+    @Published var routeStopsAtDes = [arrRouteStop]()
     
     @Published var routesAvailable = [routeAvailable]()
     
@@ -46,6 +48,9 @@ class MatchRouteInfo: ObservableObject {
     
     // All ETA of A Bus Stop
     @Published var stopAllETA = [etaResult]()
+    
+    // MTR Stations Coordinates
+    @Published var allMtrStations = mtrStation.allStations
     
     // Load All ETA of One Bus Stop
     func loadStopAllETA(stop: String) {
@@ -249,17 +254,11 @@ class MatchRouteInfo: ObservableObject {
         
         srcStops = Array(Set(srcStops))
         desStops = Array(Set(desStops))
-    }
-    
-    // Find Routes Available
-    func matchBusRoute() {
-        var routeStopsAtSrc = [arrRouteStop]()
-        var routeStopsAtDes = [arrRouteStop]()
         
-        // Initialize routesAvailable = []
-        routesAvailable = [routeAvailable]()
+        // Loop for Getting RouteStop of NearbyStops
+        routeStopsAtSrc = [arrRouteStop]()
+        routeStopsAtDes = [arrRouteStop]()
         
-        // Find All Routes near Source & Destination
         for routeStop in allRouteStops {
             for srcStop in srcStops {
                 if (routeStop.stop == srcStop.stop) {
@@ -274,13 +273,73 @@ class MatchRouteInfo: ObservableObject {
                 }
             }
         }
+    }
+    
+    // Find Routes Available
+    func matchBusRoute() {
+        var unfilterAvailable = [routeAvailable]()
+        routesAvailable = [routeAvailable]()
         
         // If Route Pass through Scr & Des -> routeAvailable
         for RsAtSrc in routeStopsAtSrc {
             for RsAtDes in routeStopsAtDes {
                 if (RsAtSrc.routeStop.route == RsAtDes.routeStop.route) && (RsAtSrc.routeStop.bound == RsAtDes.routeStop.bound) && (Int(RsAtSrc.routeStop.service_type) == 1) && (Int(RsAtDes.routeStop.service_type) == 1) && (Int(RsAtSrc.routeStop.seq)! < Int(RsAtDes.routeStop.seq)!) { // Service Type only Consider: 1
-                    routesAvailable.append(routeAvailable(srcRS: RsAtSrc, desRS: RsAtDes))
+                    
+                    let srcWalkingDistance = CLLocation(latitude: Double(RsAtSrc.Stop.lat)!, longitude: Double(RsAtSrc.Stop.long)!).distance(from: CLLocation(latitude: srcCoord.latitude, longitude: srcCoord.longitude))
+                    let desWalkingDistance = CLLocation(latitude: Double(RsAtDes.Stop.lat)!, longitude: Double(RsAtDes.Stop.long)!).distance(from: CLLocation(latitude: desCoord.latitude, longitude: desCoord.longitude))
+                    let walkingDistance = srcWalkingDistance + desWalkingDistance
+                    
+                    unfilterAvailable.append(routeAvailable(srcRS: RsAtSrc, desRS: RsAtDes, totalDistance: walkingDistance))
+                    
                 }
+            }
+        }
+        
+        // Optimize Route Search by Walking Distance
+        var shortestDistances = [String: Double]()
+        var result = [routeAvailable]()
+        
+        for loopRoute in unfilterAvailable {
+            if shortestDistances[loopRoute.srcRS.routeStop.route] == nil || loopRoute.totalDistance < shortestDistances[loopRoute.srcRS.routeStop.route]! {
+                shortestDistances[loopRoute.srcRS.routeStop.route] = loopRoute.totalDistance
+                result.removeAll {$0.srcRS.routeStop.route == loopRoute.srcRS.routeStop.route}
+                result.append(loopRoute)
+            }
+        }
+        
+        let sortedResult = result.sorted(by: {$0.totalDistance < $1.totalDistance})
+        
+        for i in sortedResult {
+            routesAvailable.append(i)
+        }
+        
+        // MTR Option
+        var srcStation = [mtrStation]()
+        var desStation = [mtrStation]()
+        var srcDistance = walkDistance + 50
+        var desDistance = walkDistance + 50
+        
+        for station in allMtrStations {
+            let src2src = CLLocation(latitude: Double(station.lat)!, longitude: Double(station.long)!).distance(from: CLLocation(latitude: srcCoord.latitude, longitude: srcCoord.longitude))
+            let des2des = CLLocation(latitude: Double(station.lat)!, longitude: Double(station.long)!).distance(from: CLLocation(latitude: desCoord.latitude, longitude: desCoord.longitude))
+            
+            if src2src < srcDistance {
+                srcStation = [mtrStation]()
+                srcStation.append(station)
+                srcDistance = src2src
+            }
+            if des2des < desDistance {
+                desStation = [mtrStation]()
+                desStation.append(station)
+                desDistance = des2des
+            }
+        }
+        
+        if (!srcStation.isEmpty) && (!desStation.isEmpty) {
+            if srcStation[0] != desStation[0] {
+                let mtrRoute = routeAvailable(srcRS: arrRouteStop(routeStop: routeResult(route: "MTR", bound: "", service_type: "", seq: "", stop: ""), Stop: stopResult(stop: "", name_en: srcStation[0].name, lat: srcStation[0].lat, long: srcStation[0].long)), desRS: arrRouteStop(routeStop: routeResult(route: "MTR", bound: "", service_type: "", seq: "", stop: ""), Stop: stopResult(stop: "", name_en: desStation[0].name, lat: desStation[0].lat, long: desStation[0].long)), totalDistance: srcDistance + desDistance)
+                
+                routesAvailable.append(mtrRoute)
             }
         }
     }

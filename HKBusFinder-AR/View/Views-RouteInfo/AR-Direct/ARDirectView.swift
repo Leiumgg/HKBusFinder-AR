@@ -11,6 +11,7 @@ import CoreLocation
 struct ARDirectView: View {
     @StateObject var ARData = ARMapViewModel()
     @EnvironmentObject var mapData: DirectionsMapViewModel
+    @ObservedObject var matchRouteInfo: MatchRouteInfo
     
     @State var locationManager = CLLocationManager()
     
@@ -42,6 +43,7 @@ struct ARDirectView: View {
                             .padding()
                     }
                     Text("🚶 \(ARData.newDesETA) min")
+                        .foregroundColor(ARData.newDesETA<mapData.formattedETA || matchRouteInfo.chosenRoute[0].srcRS.routeStop.route=="MTR" ? Color.white : Color.red)
                         .padding()
                 }
                 .background(Color.gray.opacity(0.5))

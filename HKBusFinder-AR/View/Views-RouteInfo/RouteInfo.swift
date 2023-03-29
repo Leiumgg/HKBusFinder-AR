@@ -53,7 +53,7 @@ struct RouteInfo: View {
                     }
                 } else {
                     // AR VIEW !!!!!!!!!
-                    ARDirectView()
+                    ARDirectView(matchRouteInfo: matchRouteInfo)
                         .environmentObject(mapData)
                 }
                 
@@ -101,6 +101,7 @@ struct RouteInfo: View {
                         .foregroundColor(.gray)
                         .frame(maxWidth: .infinity)
                     }
+                    .disabled(mapData.isOnBus && !mapData.isToSrcBS && !mapData.isToRealDes)
                 }
                 .padding(.horizontal)
             }
@@ -117,8 +118,19 @@ struct RouteInfo: View {
                                 let dateFormatter = ISO8601DateFormatter()
                                 let dateString = matchRouteInfo.srcStopETA.first!.eta
                                 if let date = dateFormatter.date(from: dateString ?? "") {
-                                    let timeInterval = date.timeIntervalSinceNow / 60
-                                    Text("\(timeInterval.rounded(.down), specifier: "%.f") min")
+                                    let timeInterval = (date.timeIntervalSinceNow/60).rounded(.down)
+                                    if timeInterval < 0 {
+                                        Text("--")
+                                            .foregroundColor(.red)
+                                            .onAppear {
+                                                mapData.formattedETA = Int(timeInterval)
+                                            }
+                                    } else {
+                                        Text("\(timeInterval, specifier: "%.f") min")
+                                            .onAppear {
+                                                mapData.formattedETA = Int(timeInterval)
+                                            }
+                                    }
                                 }
                             }
                         } else if mapData.isToRealDes {

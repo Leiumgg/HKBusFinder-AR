@@ -38,6 +38,8 @@ class ARMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     // Set jor Region Mei
     @Published var hasSetRegion = false
     
+    // User Heading
+    @Published var userHeading: CLLocationDirection = 0
 
     // MapKit Calculate Walking ETA
     func MKWalkingETA(p1: MKPlacemark, p2: MKPlacemark, completion: @escaping (Int) -> Void){
@@ -114,10 +116,13 @@ class ARMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     // Location Manager Stuff
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {print(error.localizedDescription)}
     
-    // User Heading Update
+    // Map Camera Setting (Heading)
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        mapView.camera.heading = newHeading.magneticHeading
-        mapView.camera.pitch = 45
+        self.userHeading = newHeading.trueHeading
+        let camera = mapView.camera
+        camera.heading = newHeading.trueHeading
+        camera.pitch = 45
+        mapView.setCamera(camera, animated: true)
     }
     
     // User Location Update
@@ -130,15 +135,20 @@ class ARMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         // Center User Location Viewing Region
         self.mapView.setRegion(self.region, animated: false)
         
-        // Smooth Animations
-        self.mapView.setVisibleMapRect(self.mapView.visibleMapRect, animated: true)
-        
+        // Run Once Only
         if !hasSetRegion {
             hasSetRegion = true
             MKWalkingETA(p1: MKPlacemark(coordinate: region.center), p2: MKPlacemark(coordinate: desCoord)) { desETA in
                 self.newDesETA = desETA
             }
         }
+        
+        // Map Camera Setting (Coordinate)
+        let camera = mapView.camera
+        camera.centerCoordinate = location.coordinate
+        camera.pitch = 45
+        camera.heading = self.userHeading
+        mapView.setCamera(camera, animated: true)
         
         // Find closest route node
             //change this later for better finding the closest node

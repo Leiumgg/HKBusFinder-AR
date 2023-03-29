@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C218681C29D42F53005481B8 /* mtrStationsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C218681B29D42F53005481B8 /* mtrStationsJson.swift */; };
+		C218681E29D4321B005481B8 /* mtrStationsCoord.json in Resources */ = {isa = PBXBuildFile; fileRef = C218681D29D4321B005481B8 /* mtrStationsCoord.json */; };
+		C218682029D46359005481B8 /* MtrRouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C218681F29D46359005481B8 /* MtrRouteInfo.swift */; };
 		C242E57129ACE91A0097F7F3 /* HomeSheetBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242E57029ACE91A0097F7F3 /* HomeSheetBottom.swift */; };
 		C242E57329ACE9F00097F7F3 /* SheetStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242E57229ACE9F00097F7F3 /* SheetStruct.swift */; };
 		C242E57529ACEB110097F7F3 /* HomeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242E57429ACEB110097F7F3 /* HomeSheetView.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C218681B29D42F53005481B8 /* mtrStationsJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mtrStationsJson.swift; sourceTree = "<group>"; };
+		C218681D29D4321B005481B8 /* mtrStationsCoord.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mtrStationsCoord.json; sourceTree = "<group>"; };
+		C218681F29D46359005481B8 /* MtrRouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MtrRouteInfo.swift; sourceTree = "<group>"; };
 		C242E57029ACE91A0097F7F3 /* HomeSheetBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSheetBottom.swift; sourceTree = "<group>"; };
 		C242E57229ACE9F00097F7F3 /* SheetStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetStruct.swift; sourceTree = "<group>"; };
 		C242E57429ACEB110097F7F3 /* HomeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSheetView.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				C27D457C2990B032008990E0 /* RouteInfo.swift */,
+				C218681F29D46359005481B8 /* MtrRouteInfo.swift */,
 				C27D458D299790A8008990E0 /* Directions */,
 				C27D458E299790EF008990E0 /* Route-Stops */,
 				C2C7764F29A0033E008E3595 /* AR-Direct */,
@@ -158,6 +165,7 @@
 				C294AACE29A37CFD00434474 /* Info.plist */,
 				C2A1062A29846D9F00895C10 /* HKBusFinder_ARApp.swift */,
 				C2A1062C29846D9F00895C10 /* ContentView.swift */,
+				C218681D29D4321B005481B8 /* mtrStationsCoord.json */,
 				C2A1063A2984735D00895C10 /* View */,
 				C2A10641298473D900895C10 /* ViewModel */,
 				C2A106442984742F00895C10 /* Struct&Class */,
@@ -202,6 +210,7 @@
 			children = (
 				C2A106452984744100895C10 /* Place.swift */,
 				C2A106472984745F00895C10 /* routeCoordinates.swift */,
+				C218681B29D42F53005481B8 /* mtrStationsJson.swift */,
 				C2A1064F2986712A00895C10 /* stopsJson.swift */,
 				C2A106512986750500895C10 /* routeStopsJson.swift */,
 				C294AAD229A6629100434474 /* busETAJson.swift */,
@@ -281,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2A1063229846DA000895C10 /* Preview Assets.xcassets in Resources */,
+				C218681E29D4321B005481B8 /* mtrStationsCoord.json in Resources */,
 				C2A1062F29846DA000895C10 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +304,7 @@
 			files = (
 				C2A1062D29846D9F00895C10 /* ContentView.swift in Sources */,
 				C27D457B298FA00A008990E0 /* Nothing2View.swift in Sources */,
+				C218681C29D42F53005481B8 /* mtrStationsJson.swift in Sources */,
 				C27D4594299830D1008990E0 /* seqStopInfo.swift in Sources */,
 				C27D458A2992EA26008990E0 /* DirectionsMapViewModel.swift in Sources */,
 				C27D45842990B35C008990E0 /* DirectionsView.swift in Sources */,
@@ -309,6 +320,7 @@
 				C2A10640298473A900895C10 /* ARViewContainer.swift in Sources */,
 				C2C7765529A0E668008E3595 /* ARDirectView.swift in Sources */,
 				C2A106482984745F00895C10 /* routeCoordinates.swift in Sources */,
+				C218682029D46359005481B8 /* MtrRouteInfo.swift in Sources */,
 				C27D45922997915F008990E0 /* RouteStopsView.swift in Sources */,
 				C2A1064E2986426000895C10 /* NothingView.swift in Sources */,
 				C2A106432984740E00895C10 /* HomeMapViewModel.swift in Sources */,

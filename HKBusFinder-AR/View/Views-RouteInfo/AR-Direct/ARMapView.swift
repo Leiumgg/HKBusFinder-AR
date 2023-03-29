@@ -25,8 +25,6 @@ struct ARMapView: UIViewRepresentable {
         view.isScrollEnabled = false
         view.isRotateEnabled = false
         
-        view.userTrackingMode = .followWithHeading
-        
         return view
     }
     
@@ -42,5 +40,6 @@ struct ARMapView: UIViewRepresentable {
             renderer.lineWidth = 5
             return renderer
         }
+        
     }
 }

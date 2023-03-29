@@ -109,7 +109,7 @@ struct Home: View {
                             if showDistanceBar {
                                 ZStack {
                                     VStack(spacing: 0) {
-                                        Slider(value: $walkingDistance, in: 50...1000, step: 50.0)
+                                        Slider(value: $walkingDistance, in: 50...800, step: 50.0)
                                             .onChange(of: walkingDistance, perform: { newValue in
                                                 matchRouteInfo.walkDistance = newValue
                                             })
@@ -166,6 +166,7 @@ struct Home: View {
                 // Load Buses and Rotues Data From JSON URL
                 matchRouteInfo.loadStopsData()
                 matchRouteInfo.loadRouteStopsData()
+                print(mtrStation.allStations.first!)
             }
             // Get BusStopNearby
             .onChange(of: matchRouteInfo.allStops.count, perform: { newValue in

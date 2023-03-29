@@ -15,4 +15,5 @@ struct arrRouteStop: Hashable, Codable {
 struct routeAvailable: Hashable, Codable {
     var srcRS: arrRouteStop
     var desRS: arrRouteStop
+    var totalDistance: Double
 }

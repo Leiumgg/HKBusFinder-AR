@@ -67,7 +67,11 @@ struct DirectionsView: View {
             mapData.realDesCoord = matchRouteInfo.desCoord
             
             // Load Bus Stops Info in Sequence
-            matchRouteInfo.loadSeqStopInfo(routeRS: matchRouteInfo.chosenRoute[0].srcRS.routeStop)
+            if matchRouteInfo.chosenRoute[0].srcRS.routeStop.route == "MTR" {
+                matchRouteInfo.selectedRSInfo = [seqStopInfo(seq: 1, stopInfo: matchRouteInfo.chosenRoute[0].srcRS.Stop), seqStopInfo(seq: 2, stopInfo: matchRouteInfo.chosenRoute[0].desRS.Stop)]
+            } else {
+                matchRouteInfo.loadSeqStopInfo(routeRS: matchRouteInfo.chosenRoute[0].srcRS.routeStop)
+            }
         }
     }
 }

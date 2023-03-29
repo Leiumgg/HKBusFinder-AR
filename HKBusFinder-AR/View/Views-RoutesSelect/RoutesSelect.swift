@@ -19,8 +19,10 @@ struct RoutesSelect: View {
     
     var body: some View {
         // Until this Deleted, Keep Command+Z
-        List(matchRouteInfo.routesAvailable, id: \.self) {item in
-            routePageLink(matchRouteInfo: matchRouteInfo, item: item)
+        VStack {
+            List(matchRouteInfo.routesAvailable, id: \.self) {item in
+                routePageLink(matchRouteInfo: matchRouteInfo, item: item)
+            }
         }
         // Show Search Info
         .toolbar {
