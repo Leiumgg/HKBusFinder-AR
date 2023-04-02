@@ -41,6 +41,7 @@
 		C2C7765329A0C18E008E3595 /* ARMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C7765229A0C18E008E3595 /* ARMapViewModel.swift */; };
 		C2C7765529A0E668008E3595 /* ARDirectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C7765429A0E668008E3595 /* ARDirectView.swift */; };
 		C2C7765729A14050008E3595 /* ARMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C7765629A14050008E3595 /* ARMapView.swift */; };
+		C2D31A2E29D9C0BA00213C69 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D31A2D29D9C0BA00213C69 /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +63,7 @@
 		C294AACE29A37CFD00434474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C294AAD029A6325400434474 /* routePageLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routePageLink.swift; sourceTree = "<group>"; };
 		C294AAD229A6629100434474 /* busETAJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busETAJson.swift; sourceTree = "<group>"; };
-		C2A1062729846D9E00895C10 /* HKBusFinder-AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HKBusFinder-AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A1062729846D9E00895C10 /* BUSiFIND.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUSiFIND.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A1062A29846D9F00895C10 /* HKBusFinder_ARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKBusFinder_ARApp.swift; sourceTree = "<group>"; };
 		C2A1062C29846D9F00895C10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C2A1062E29846DA000895C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		C2C7765229A0C18E008E3595 /* ARMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARMapViewModel.swift; sourceTree = "<group>"; };
 		C2C7765429A0E668008E3595 /* ARDirectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDirectView.swift; sourceTree = "<group>"; };
 		C2C7765629A14050008E3595 /* ARMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARMapView.swift; sourceTree = "<group>"; };
+		C2D31A2D29D9C0BA00213C69 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,7 @@
 		C2A1062829846D9E00895C10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2A1062729846D9E00895C10 /* HKBusFinder-AR.app */,
+				C2A1062729846D9E00895C10 /* BUSiFIND.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +167,7 @@
 				C294AACE29A37CFD00434474 /* Info.plist */,
 				C2A1062A29846D9F00895C10 /* HKBusFinder_ARApp.swift */,
 				C2A1062C29846D9F00895C10 /* ContentView.swift */,
+				C2D31A2D29D9C0BA00213C69 /* SplashScreenView.swift */,
 				C218681D29D4321B005481B8 /* mtrStationsCoord.json */,
 				C2A1063A2984735D00895C10 /* View */,
 				C2A10641298473D900895C10 /* ViewModel */,
@@ -248,7 +251,7 @@
 			);
 			name = "HKBusFinder-AR";
 			productName = "HKBusFinder-AR";
-			productReference = C2A1062729846D9E00895C10 /* HKBusFinder-AR.app */;
+			productReference = C2A1062729846D9E00895C10 /* BUSiFIND.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -325,6 +328,7 @@
 				C2A1064E2986426000895C10 /* NothingView.swift in Sources */,
 				C2A106432984740E00895C10 /* HomeMapViewModel.swift in Sources */,
 				C2A1064C2985599C00895C10 /* RoutesSelect.swift in Sources */,
+				C2D31A2E29D9C0BA00213C69 /* SplashScreenView.swift in Sources */,
 				C242E57129ACE91A0097F7F3 /* HomeSheetBottom.swift in Sources */,
 				C2A106522986750500895C10 /* routeStopsJson.swift in Sources */,
 				C294AAD329A6629100434474 /* busETAJson.swift in Sources */,
@@ -478,7 +482,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JohnL.HKBusFinder-AR";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BUSiFIND;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -510,7 +514,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JohnL.HKBusFinder-AR";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BUSiFIND;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
