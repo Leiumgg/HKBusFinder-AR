@@ -22,6 +22,7 @@ struct RoutesSelect: View {
         VStack {
             List(matchRouteInfo.routesAvailable, id: \.self) {item in
                 routePageLink(matchRouteInfo: matchRouteInfo, item: item)
+                    .environmentObject(mapData)
             }
         }
         // Show Search Info
@@ -46,7 +47,7 @@ struct RoutesSelect: View {
                 srcName = name ?? ""
             }
             
-            desName = mapData.selectedPlace[0].title ?? "--"
+            desName = mapData.selectedDesPlace[0].title ?? "--"
         }
     }
 }

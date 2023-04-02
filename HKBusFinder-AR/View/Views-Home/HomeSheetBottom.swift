@@ -12,10 +12,10 @@ struct HomeSheetBottom: View {
     @ObservedObject var matchRouteInfo: MatchRouteInfo
     @EnvironmentObject var mapData: HomeMapViewModel
     
-    @State private var selectedTab = 1
+    @State var selectedTab = 1
     private var tabList: [Int] {
         var list = [0, 1]
-        if !mapData.selectedPlace.isEmpty {
+        if !mapData.selectedDesPlace.isEmpty {
             list.append(2)
         }
         return list
@@ -28,13 +28,13 @@ struct HomeSheetBottom: View {
             HStack {
                 Picker("Picker", selection: $selectedTab) {
                     ForEach(tabList, id: \.self) { item in
-                        Text("\(item == 0 ? "Pick a Location" : item == 1 ? "Your Location" : "\(mapData.selectedPlace[0].title!)")")
+                        Text("\(item == 0 ? "Pick a Location" : item == 1 ? mapData.selectedSrcPlace.isEmpty ? "Your Location" : "\(mapData.selectedSrcPlace[0].title!)" : "\(mapData.selectedDesPlace[0].title!)")")
                     }
                 }
                 .tint(.white)
                 .frame(maxWidth: .infinity)
                 
-                Text("\(selectedTab == 1 ? "\(matchRouteInfo.srcStops.count)" : selectedTab == 2 ? "\(mapData.selectedPlace.isEmpty ? "--" : "\(matchRouteInfo.desStops.count)")" : "--") Stops Nearby")
+                Text("\(selectedTab == 1 ? "\(matchRouteInfo.srcStops.count)" : selectedTab == 2 ? "\(mapData.selectedDesPlace.isEmpty ? "--" : "\(matchRouteInfo.desStops.count)")" : "--") Stops Nearby")
                     .foregroundColor(Color.white)
                     .padding(.horizontal)
             }
@@ -44,8 +44,8 @@ struct HomeSheetBottom: View {
             ScrollViewReader { view in
                 ScrollView {
                     VStack(spacing: 0) {
-                        ForEach((selectedTab == 1 ? matchRouteInfo.srcStopsPin : selectedTab == 2 && !mapData.selectedPlace.isEmpty ? matchRouteInfo.desStopsPin : [MKPointAnnotation]()), id: \.self) { item in
-                            StopETAView(matchRouteInfo: matchRouteInfo, view: view, item: item, expandItem: expandItem)
+                        ForEach((selectedTab == 1 ? matchRouteInfo.srcStopsPin : selectedTab == 2 && !mapData.selectedDesPlace.isEmpty ? matchRouteInfo.desStopsPin : [MKPointAnnotation]()), id: \.self) { item in
+                            StopETAView(matchRouteInfo: matchRouteInfo, view: view, item: item, expandItem: expandItem, selectedTab: selectedTab)
                                 .contentShape(Rectangle())
                                 .environmentObject(mapData)
                                 .onTapGesture {
@@ -74,6 +74,7 @@ struct StopETAView: View {
     var view: ScrollViewProxy
     var item: MKPointAnnotation
     var expandItem: MKPointAnnotation
+    var selectedTab: Int
     
     var body: some View {
         ZStack {
@@ -84,7 +85,7 @@ struct StopETAView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     
-                    Text("\(CLLocation(latitude: mapData.region.center.latitude, longitude: mapData.region.center.longitude).distance(from: CLLocation(latitude: item.coordinate.latitude, longitude: item.coordinate.longitude)), specifier: "%.f")m")
+                    Text("\(CLLocation(latitude: selectedTab==1 ? mapData.selectedSrcPlace.isEmpty ? mapData.region.center.latitude : matchRouteInfo.srcCoord.latitude : matchRouteInfo.desCoord.latitude, longitude: selectedTab==1 ? mapData.selectedSrcPlace.isEmpty ? mapData.region.center.longitude : matchRouteInfo.srcCoord.longitude : matchRouteInfo.desCoord.longitude).distance(from: CLLocation(latitude: item.coordinate.latitude, longitude: item.coordinate.longitude)), specifier: "%.f")m")
                         .foregroundColor(Color.white)
                         .padding()
                 }

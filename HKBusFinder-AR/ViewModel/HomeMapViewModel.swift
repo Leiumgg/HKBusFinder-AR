@@ -30,7 +30,8 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var places: [Place] = []
     
     // Selected Place
-    @Published var selectedPlace: [MKPointAnnotation] = []
+    @Published var selectedSrcPlace = [MKPointAnnotation]()
+    @Published var selectedDesPlace = [MKPointAnnotation]()
     
     // SelectedPin
     @Published var selectedPin = MKPointAnnotation()
@@ -45,9 +46,21 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var hasSetRegion = false
     
     // Clear Search
-    func clearSearch() {
-        mapView.removeAnnotation(selectedPlace[0])
-        selectedPlace = [MKPointAnnotation]()
+    func clearSrcSearch() {
+        if !selectedSrcPlace.isEmpty {
+            mapView.removeAnnotation(selectedSrcPlace[0])
+        }
+        selectedSrcPlace = [MKPointAnnotation]()
+    }
+    func clearDesSearch() {
+        if !selectedDesPlace.isEmpty {
+            mapView.removeAnnotation(selectedDesPlace[0])
+        }
+        selectedDesPlace = [MKPointAnnotation]()
+    }
+    func clearAllSearch() {
+        clearSrcSearch()
+        clearDesSearch()
     }
     
     // Updating Map Type
@@ -63,13 +76,17 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Focus Location
     func focusLocation() {
-        mapView.setRegion(region, animated: true)
+        if selectedSrcPlace.isEmpty {
+            mapView.setRegion(region, animated: true)
+        } else {
+            mapView.setRegion(MKCoordinateRegion(center: selectedSrcPlace[0].coordinate, latitudinalMeters: 500, longitudinalMeters: 500), animated: true)
+        }
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
     }
     
     // Focus Location
     func focusDestination() {
-        mapView.setRegion(MKCoordinateRegion(center: selectedPlace[0].coordinate, latitudinalMeters: 500, longitudinalMeters: 500), animated: true)
+        mapView.setRegion(MKCoordinateRegion(center: selectedDesPlace[0].coordinate, latitudinalMeters: 500, longitudinalMeters: 500), animated: true)
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
     }
     
@@ -110,8 +127,36 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     
-    // Pick Search Result
-    func selectPlace(place: Place) {
+    // Pick Source Search Result
+    func selectSrcPlace(place: Place) {
+        // Showing Pin on Map
+        searchTxt = ""
+        
+        guard let coordinate = place.placemark.location?.coordinate else { return }
+        
+        let pointAnnotation = MKPointAnnotation()
+        pointAnnotation.coordinate = coordinate
+        pointAnnotation.title = place.placemark.name ?? "Starting Point"
+        pointAnnotation.subtitle = "Starting Point"
+        
+        if !selectedSrcPlace.isEmpty {
+            mapView.removeAnnotation(selectedSrcPlace[0])
+        }
+        
+        selectedSrcPlace = [MKPointAnnotation]()
+        selectedSrcPlace.append(pointAnnotation)
+        
+        mapView.addAnnotation(pointAnnotation)
+        
+        // Moving Map To That Location
+        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
+        mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
+    }
+    
+    // Pick Destination Search Result
+    func selectDesPlace(place: Place) {
         // Showing Pin on Map
         searchTxt = ""
         
@@ -122,12 +167,12 @@ class HomeMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         pointAnnotation.title = place.placemark.name ?? "Destination"
         pointAnnotation.subtitle = "Destination"
         
-        selectedPlace = [MKPointAnnotation]()
-        selectedPlace.append(pointAnnotation)
+        if !selectedDesPlace.isEmpty {
+            mapView.removeAnnotation(selectedDesPlace[0])
+        }
         
-        // Removing All Old Ones
-        mapView.removeAnnotations(mapView.annotations)
-        mapView.removeOverlays(mapView.overlays)
+        selectedDesPlace = [MKPointAnnotation]()
+        selectedDesPlace.append(pointAnnotation)
         
         mapView.addAnnotation(pointAnnotation)
         

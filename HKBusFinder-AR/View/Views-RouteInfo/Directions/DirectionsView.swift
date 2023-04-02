@@ -64,6 +64,7 @@ struct DirectionsView: View {
             
             mapData.busDesCoord = CLLocationCoordinate2D(latitude: Double(matchRouteInfo.chosenRoute[0].desRS.Stop.lat)!, longitude: Double(matchRouteInfo.chosenRoute[0].desRS.Stop.long)!)
             
+            mapData.realSrcCoord = matchRouteInfo.srcCoord
             mapData.realDesCoord = matchRouteInfo.desCoord
             
             // Load Bus Stops Info in Sequence

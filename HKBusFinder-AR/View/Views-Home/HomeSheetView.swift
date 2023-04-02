@@ -34,29 +34,30 @@ struct HomeSheetView: View {
                         .frame(width: 80, height: 4)
                     
                     // Initial Sheet View: User Location or Destination
-                    if mapData.selectedPlace.isEmpty {
+                    if mapData.selectedDesPlace.isEmpty {
                         VStack {
-                            Text("Your Location:")
+                            Text(mapData.selectedSrcPlace.isEmpty ? "Your Location:" : "Starting Point:")
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .padding(.horizontal)
                                 .colorScheme(.dark)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            Text("\(srcName)")
+                            Text(mapData.selectedSrcPlace.isEmpty ? "\(srcName)" : mapData.selectedSrcPlace[0].title!)
                                 .padding(.horizontal)
                                 .colorScheme(.dark)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     } else {
                         HStack {
+                            //4Testing: NavigationLink(destination: NothingView()) {
                             NavigationLink(destination: RoutesSelect(matchRouteInfo: matchRouteInfo).environmentObject(mapData)) {
                                 
                                 HStack {
                                     Image(systemName: "location.fill")
                                         .font(.title3)
                                     
-                                    Text("\(mapData.selectedPlace[0].title ?? "Destination")")
+                                    Text("\(mapData.selectedDesPlace[0].title ?? "Destination")")
                                         .colorScheme(.dark)
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                 }

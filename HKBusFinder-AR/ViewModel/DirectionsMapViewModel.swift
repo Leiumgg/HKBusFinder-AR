@@ -105,8 +105,7 @@ class DirectionsMapViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     
     // Initailize Pin and Dotted Line
     func initPinNDotLine() {
-        self.mapView.setRegion(region, animated: false)
-        realSrcCoord = region.center
+        self.mapView.setRegion(MKCoordinateRegion(center: realSrcCoord, latitudinalMeters: 500, longitudinalMeters: 500), animated: true)
         
         // Initialize MapView, Route and Annotation
         self.mapView.removeOverlays(self.mapView.overlays)

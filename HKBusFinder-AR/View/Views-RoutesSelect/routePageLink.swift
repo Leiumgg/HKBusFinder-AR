@@ -10,6 +10,7 @@ import MapKit
 
 struct routePageLink: View {
     @ObservedObject var matchRouteInfo: MatchRouteInfo
+    @EnvironmentObject var selectionMapData: HomeMapViewModel
     
     var item: routeAvailable
     
@@ -48,7 +49,7 @@ struct routePageLink: View {
                 }
             }
         } else {
-            NavigationLink(destination: RouteInfo(matchRouteInfo: matchRouteInfo, chosenRoute: item)) {
+            NavigationLink(destination: RouteInfo(matchRouteInfo: matchRouteInfo, chosenRoute: item).environmentObject(selectionMapData)) {
                 HStack {
                     Text(item.srcRS.routeStop.route)
                         .padding(.trailing)

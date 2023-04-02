@@ -10,6 +10,7 @@ import SwiftUI
 struct RouteInfo: View {
     @StateObject var mapData = DirectionsMapViewModel()
     
+    @EnvironmentObject var selectionMapData: HomeMapViewModel
     @ObservedObject var matchRouteInfo: MatchRouteInfo
     var chosenRoute: routeAvailable
     
@@ -73,7 +74,7 @@ struct RouteInfo: View {
                             Text("Get On/Off")
                                 .font(.caption2)
                         }
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                     }
                     Button(action: {
@@ -88,17 +89,18 @@ struct RouteInfo: View {
                             Text("Route Info")
                                 .font(.caption2)
                         }
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                     }
                     Button(action: { self.selectedTab = 2 }) {
                         VStack {
                             Image(systemName: selectedTab == 2 ? "location.fill.viewfinder" : "location.viewfinder")
                                 .imageScale(.large)
+                                .fontWeight(selectedTab == 2 ? .heavy : .medium)
                             Text("AR Direct")
                                 .font(.caption2)
                         }
-                        .foregroundColor(.gray)
+                        .foregroundColor(mapData.isOnBus && !mapData.isToSrcBS && !mapData.isToRealDes ? .gray : .white)
                         .frame(maxWidth: .infinity)
                     }
                     .disabled(mapData.isOnBus && !mapData.isToSrcBS && !mapData.isToRealDes)
@@ -136,7 +138,32 @@ struct RouteInfo: View {
                         } else if mapData.isToRealDes {
                             Text("Off Bus")
                         } else {
-                            Text("On Bus")
+                            if selectionMapData.selectedSrcPlace.isEmpty {
+                                Text("On Bus")
+                            } else {
+                                Image(systemName: "clock")
+                                    .foregroundColor(Color.red)
+                                    .fontWeight(.bold)
+                                if !matchRouteInfo.srcStopETA.isEmpty {
+                                    let dateFormatter = ISO8601DateFormatter()
+                                    let dateString = matchRouteInfo.srcStopETA.first!.eta
+                                    if let date = dateFormatter.date(from: dateString ?? "") {
+                                        let timeInterval = (date.timeIntervalSinceNow/60).rounded(.down)
+                                        if timeInterval < 0 {
+                                            Text("--")
+                                                .foregroundColor(.red)
+                                                .onAppear {
+                                                    mapData.formattedETA = Int(timeInterval)
+                                                }
+                                        } else {
+                                            Text("\(timeInterval, specifier: "%.f") min")
+                                                .onAppear {
+                                                    mapData.formattedETA = Int(timeInterval)
+                                                }
+                                        }
+                                    }
+                                }
+                            }
                         }
                         
                         Image(systemName: "bus.doubledecker.fill")

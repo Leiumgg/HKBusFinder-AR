@@ -42,7 +42,7 @@ struct ARDirectView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
                     }
-                    Text("🚶 \(ARData.newDesETA) min")
+                    Text("\(ARData.newDesETA<mapData.formattedETA ? "🚶" : "🏃‍♂️") \(ARData.newDesETA) min")
                         .foregroundColor(ARData.newDesETA<mapData.formattedETA || matchRouteInfo.chosenRoute[0].srcRS.routeStop.route=="MTR" ? Color.white : Color.red)
                         .padding()
                 }
