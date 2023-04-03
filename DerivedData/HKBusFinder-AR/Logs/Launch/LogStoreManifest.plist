@@ -6,10 +6,10 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>04F41B64-2C0E-469E-BC67-6E6322B160AC</key>
+		<key>A99AE6FF-05DE-4933-8563-C29C19412077</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>8BA47F28-98E8-48DE-A7E4-0E726272F834</string>
+			<string>86DE7ADE-7862-4BC9-ADEC-95FB179BE465</string>
 			<key>auxiliaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -22,7 +22,7 @@
 			<key>domainType</key>
 			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
 			<key>fileName</key>
-			<string>Run-HKBusFinder-AR-2023.04.02_22-23-40-+0800.xcresult</string>
+			<string>Run-HKBusFinder-AR-2023.04.02_23-08-28-+0800.xcresult</string>
 			<key>hasAuxiliaryLog</key>
 			<true/>
 			<key>hasConsoleLog</key>
@@ -43,103 +43,13 @@
 			<key>signature</key>
 			<string>Run HKBusFinder-AR</string>
 			<key>timeStartedRecording</key>
-			<real>702138220.80289805</real>
+			<real>702140908.37973702</real>
 			<key>timeStoppedRecording</key>
 			<real>0.0</real>
 			<key>title</key>
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
-			<string>04F41B64-2C0E-469E-BC67-6E6322B160AC</string>
-		</dict>
-		<key>584CAEC9-75DD-46CB-920D-46E25C8C4AEE</key>
-		<dict>
-			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>3EF96F8E-40B0-4818-B9D1-84BD81DF3385</string>
-			<key>auxiliaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>className</key>
-			<string>IDESchemeActionsInvocationRecord</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
-			<key>fileName</key>
-			<string>Run-HKBusFinder-AR-2023.04.02_22-21-12-+0800.xcresult</string>
-			<key>hasAuxiliaryLog</key>
-			<true/>
-			<key>hasConsoleLog</key>
-			<true/>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>HKBusFinder-AR project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>HKBusFinder-AR</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run HKBusFinder-AR</string>
-			<key>timeStartedRecording</key>
-			<real>702138072.18583906</real>
-			<key>timeStoppedRecording</key>
-			<real>0.0</real>
-			<key>title</key>
-			<string>Run HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>584CAEC9-75DD-46CB-920D-46E25C8C4AEE</string>
-		</dict>
-		<key>BE3F7C30-5487-428E-9E16-768DF9044732</key>
-		<dict>
-			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>32FC4ECB-E11D-45BB-8419-40684CD85A36</string>
-			<key>auxiliaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>className</key>
-			<string>IDESchemeActionsInvocationRecord</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
-			<key>fileName</key>
-			<string>Run-HKBusFinder-AR-2023.04.02_19-31-53-+0800.xcresult</string>
-			<key>hasAuxiliaryLog</key>
-			<true/>
-			<key>hasConsoleLog</key>
-			<true/>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>HKBusFinder-AR project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>HKBusFinder-AR</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run HKBusFinder-AR</string>
-			<key>timeStartedRecording</key>
-			<real>702127913.35323203</real>
-			<key>timeStoppedRecording</key>
-			<real>0.0</real>
-			<key>title</key>
-			<string>Run HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>BE3F7C30-5487-428E-9E16-768DF9044732</string>
+			<string>A99AE6FF-05DE-4933-8563-C29C19412077</string>
 		</dict>
 	</dict>
 </dict>
