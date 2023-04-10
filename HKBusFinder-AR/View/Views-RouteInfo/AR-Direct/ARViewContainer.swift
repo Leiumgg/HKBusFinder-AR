@@ -42,26 +42,24 @@ struct ARViewContainer: UIViewRepresentable {
         
         var lastNodePosition = [SIMD3<Float>]()
         
-        for i in ARData.closestRouteCoordIndex-2 ..< ARData.closestRouteCoordIndex+5 {
-            if (i >= 0) && (i < ARData.routeCoordinates.count) {
-                let endPoint = calEntityPos(entityCoord: ARData.routeCoordinates[i])
-                if !lastNodePosition.isEmpty {
-                    let startPoint = lastNodePosition[0]
-                    
-                    let length = simd_distance(startPoint, endPoint)
-                    let direction = (endPoint - startPoint) / length
-                    
-                    let lineMesh = MeshResource.generatePlane(width: 1, depth: length)
-                    
-                    let lineEntity = ModelEntity(mesh: lineMesh, materials: [material])
-                    lineEntity.position = startPoint + direction * length / 2
-                    lineEntity.orientation = simd_quatf(from: [0,0,-1], to: direction)
-                    
-                    anchor.addChild(lineEntity)
-                }
+        for i in 0 ..< ARData.routeCoordinates.count {
+            let endPoint = calEntityPos(entityCoord: ARData.routeCoordinates[i])
+            if !lastNodePosition.isEmpty {
+                let startPoint = lastNodePosition[0]
                 
-                lastNodePosition = [endPoint]
+                let length = simd_distance(startPoint, endPoint)
+                let direction = (endPoint - startPoint) / length
+                
+                let lineMesh = MeshResource.generatePlane(width: 1, depth: length)
+                
+                let lineEntity = ModelEntity(mesh: lineMesh, materials: [material])
+                lineEntity.position = startPoint + direction * length / 2
+                lineEntity.orientation = simd_quatf(from: [0,0,-1], to: direction)
+                
+                anchor.addChild(lineEntity)
             }
+            
+            lastNodePosition = [endPoint]
         }
         
         uiView.scene.addAnchor(anchor)
