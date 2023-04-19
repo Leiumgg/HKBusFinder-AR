@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>00915CBD-C30F-4BE4-9958-2309FC0A62B6</key>
+		<key>15416561-D2DE-41DB-97F8-34DE843EE716</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,35 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>00915CBD-C30F-4BE4-9958-2309FC0A62B6.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludCI6e319LCJibHVlcHJpbnRfcHJvdmlkZXJGaWxlUGF0aFN0cmluZyI6IlwvVXNlcnNcL2pvaG5sNjE1XC9EZXNrdG9wXC9lbGVjNDg0OC1meXBcL0hLQnVzRmluZGVyLUFSXC9IS0J1c0ZpbmRlci1BUi54Y29kZXByb2oiLCJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IkMyQTEwNjI2Mjk4NDZEOUUwMDg5NUMxMCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702816239.51030803</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>00915CBD-C30F-4BE4-9958-2309FC0A62B6</string>
-		</dict>
-		<key>0246C880-544B-47A2-B2CC-82F176453510</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>0246C880-544B-47A2-B2CC-82F176453510.xcactivitylog</string>
+			<string>15416561-D2DE-41DB-97F8-34DE843EE716.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -54,43 +26,15 @@
 			<key>signature</key>
 			<string>eyJ0eXBlIjp7ImJsdWVwcmludFByb3ZpZGVyIjp7fX0sImJsdWVwcmludFByb3ZpZGVyX3Byb3ZpZGVyRmlsZVBhdGhTdHJpbmciOiJcL1VzZXJzXC9qb2hubDYxNVwvRGVza3RvcFwvZWxlYzQ4NDgtZnlwXC9IS0J1c0ZpbmRlci1BUlwvSEtCdXNGaW5kZXItQVIueGNvZGVwcm9qIn0=</string>
 			<key>timeStartedRecording</key>
-			<real>702814382.53923702</real>
+			<real>703390872.63579297</real>
 			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>0246C880-544B-47A2-B2CC-82F176453510</string>
-		</dict>
-		<key>13A622C3-E660-4714-8955-0A3593EBF190</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>13A622C3-E660-4714-8955-0A3593EBF190.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludFByb3ZpZGVyIjp7fX0sImJsdWVwcmludFByb3ZpZGVyX3Byb3ZpZGVyRmlsZVBhdGhTdHJpbmciOiJcL1VzZXJzXC9qb2hubDYxNVwvRGVza3RvcFwvZWxlYzQ4NDgtZnlwXC9IS0J1c0ZpbmRlci1BUlwvSEtCdXNGaW5kZXItQVIueGNvZGVwcm9qIn0=</string>
-			<key>timeStartedRecording</key>
-			<real>702815530.91698205</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
+			<real>703390879.88273299</real>
 			<key>title</key>
 			<string>Archive HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
-			<string>13A622C3-E660-4714-8955-0A3593EBF190</string>
+			<string>15416561-D2DE-41DB-97F8-34DE843EE716</string>
 		</dict>
-		<key>19F1AB58-2247-466B-B386-3CE4025965D6</key>
+		<key>5667A14F-E069-4037-BD2E-99B19875553C</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -99,7 +43,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>19F1AB58-2247-466B-B386-3CE4025965D6.xcactivitylog</string>
+			<string>5667A14F-E069-4037-BD2E-99B19875553C.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -110,15 +54,15 @@
 			<key>signature</key>
 			<string>eyJ0eXBlIjp7ImJ1aWxkU3lzdGVtVGFzayI6e319LCJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCJ9</string>
 			<key>timeStartedRecording</key>
-			<real>702815530.91698205</real>
+			<real>703390872.63579297</real>
 			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
+			<real>703390879.88273299</real>
 			<key>title</key>
 			<string>Archive HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
-			<string>19F1AB58-2247-466B-B386-3CE4025965D6</string>
+			<string>5667A14F-E069-4037-BD2E-99B19875553C</string>
 		</dict>
-		<key>3B01EC95-B064-4E00-BDA9-B511B5119049</key>
+		<key>9C380836-76B8-4B23-B27B-3D4EDB6E9159</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -127,91 +71,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>3B01EC95-B064-4E00-BDA9-B511B5119049.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludFByb3ZpZGVyIjp7fX0sImJsdWVwcmludFByb3ZpZGVyX3Byb3ZpZGVyRmlsZVBhdGhTdHJpbmciOiJcL1VzZXJzXC9qb2hubDYxNVwvRGVza3RvcFwvZWxlYzQ4NDgtZnlwXC9IS0J1c0ZpbmRlci1BUlwvSEtCdXNGaW5kZXItQVIueGNvZGVwcm9qIn0=</string>
-			<key>timeStartedRecording</key>
-			<real>702815709.14521503</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Archive HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>3B01EC95-B064-4E00-BDA9-B511B5119049</string>
-		</dict>
-		<key>3C1B6725-0CA7-44B4-9902-E6F77CEA8CC9</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>3C1B6725-0CA7-44B4-9902-E6F77CEA8CC9.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJ1aWxkU3lzdGVtVGFzayI6e319LCJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702816239.51030803</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>3C1B6725-0CA7-44B4-9902-E6F77CEA8CC9</string>
-		</dict>
-		<key>41A90D9A-A60E-485B-AAA8-F5583CF2E5A1</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>41A90D9A-A60E-485B-AAA8-F5583CF2E5A1.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludFByb3ZpZGVyIjp7fX0sImJsdWVwcmludFByb3ZpZGVyX3Byb3ZpZGVyRmlsZVBhdGhTdHJpbmciOiJcL1VzZXJzXC9qb2hubDYxNVwvRGVza3RvcFwvZWxlYzQ4NDgtZnlwXC9IS0J1c0ZpbmRlci1BUlwvSEtCdXNGaW5kZXItQVIueGNvZGVwcm9qIn0=</string>
-			<key>timeStartedRecording</key>
-			<real>702374815.29420102</real>
-			<key>timeStoppedRecording</key>
-			<real>702374823.37665999</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>41A90D9A-A60E-485B-AAA8-F5583CF2E5A1</string>
-		</dict>
-		<key>4FA5E0E6-F93E-44B1-93D7-12593F243754</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>4FA5E0E6-F93E-44B1-93D7-12593F243754.xcactivitylog</string>
+			<string>9C380836-76B8-4B23-B27B-3D4EDB6E9159.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -222,15 +82,15 @@
 			<key>signature</key>
 			<string>eyJ0eXBlIjp7ImJsdWVwcmludCI6e319LCJibHVlcHJpbnRfcHJvdmlkZXJGaWxlUGF0aFN0cmluZyI6IlwvVXNlcnNcL2pvaG5sNjE1XC9EZXNrdG9wXC9lbGVjNDg0OC1meXBcL0hLQnVzRmluZGVyLUFSXC9IS0J1c0ZpbmRlci1BUi54Y29kZXByb2oiLCJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IkMyQTEwNjI2Mjk4NDZEOUUwMDg5NUMxMCJ9</string>
 			<key>timeStartedRecording</key>
-			<real>702816279.94081497</real>
+			<real>703390872.63579297</real>
 			<key>timeStoppedRecording</key>
-			<real>702816280.19389796</real>
+			<real>703390879.88273299</real>
 			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
+			<string>Archive HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
-			<string>4FA5E0E6-F93E-44B1-93D7-12593F243754</string>
+			<string>9C380836-76B8-4B23-B27B-3D4EDB6E9159</string>
 		</dict>
-		<key>709F45B4-6E90-4AE4-8951-25B424BC08F9</key>
+		<key>FAA9CB04-20E9-4901-BC2F-73AD072AAC7E</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -239,63 +99,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>709F45B4-6E90-4AE4-8951-25B424BC08F9.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludFByb3ZpZGVyIjp7fX0sImJsdWVwcmludFByb3ZpZGVyX3Byb3ZpZGVyRmlsZVBhdGhTdHJpbmciOiJcL1VzZXJzXC9qb2hubDYxNVwvRGVza3RvcFwvZWxlYzQ4NDgtZnlwXC9IS0J1c0ZpbmRlci1BUlwvSEtCdXNGaW5kZXItQVIueGNvZGVwcm9qIn0=</string>
-			<key>timeStartedRecording</key>
-			<real>702374815.29420102</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>709F45B4-6E90-4AE4-8951-25B424BC08F9</string>
-		</dict>
-		<key>93B3BC6E-16DC-4052-9135-BFA7BDD53B4A</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>93B3BC6E-16DC-4052-9135-BFA7BDD53B4A.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJ1aWxkU3lzdGVtVGFzayI6e319LCJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702816279.94081497</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>93B3BC6E-16DC-4052-9135-BFA7BDD53B4A</string>
-		</dict>
-		<key>95BB517C-D2C6-4803-A6B2-33B09D074B51</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>95BB517C-D2C6-4803-A6B2-33B09D074B51.xcactivitylog</string>
+			<string>FAA9CB04-20E9-4901-BC2F-73AD072AAC7E.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -306,237 +110,13 @@
 			<key>signature</key>
 			<string>eyJ0eXBlIjp7ImJsdWVwcmludCI6e319LCJibHVlcHJpbnRfcHJvdmlkZXJGaWxlUGF0aFN0cmluZyI6IlwvVXNlcnNcL2pvaG5sNjE1XC9EZXNrdG9wXC9lbGVjNDg0OC1meXBcL0hLQnVzRmluZGVyLUFSXC9IS0J1c0ZpbmRlci1BUi54Y29kZXByb2oiLCJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IkMyQTEwNjI2Mjk4NDZEOUUwMDg5NUMxMCJ9</string>
 			<key>timeStartedRecording</key>
-			<real>702374815.29420102</real>
-			<key>timeStoppedRecording</key>
-			<real>702374823.37665999</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>95BB517C-D2C6-4803-A6B2-33B09D074B51</string>
-		</dict>
-		<key>9BE98B0F-AED0-4958-A8CC-B4C2936F0426</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>9BE98B0F-AED0-4958-A8CC-B4C2936F0426.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludCI6e319LCJibHVlcHJpbnRfcHJvdmlkZXJGaWxlUGF0aFN0cmluZyI6IlwvVXNlcnNcL2pvaG5sNjE1XC9EZXNrdG9wXC9lbGVjNDg0OC1meXBcL0hLQnVzRmluZGVyLUFSXC9IS0J1c0ZpbmRlci1BUi54Y29kZXByb2oiLCJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IkMyQTEwNjI2Mjk4NDZEOUUwMDg5NUMxMCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702815709.14521503</real>
+			<real>703390872.63579297</real>
 			<key>timeStoppedRecording</key>
 			<real>63113904000</real>
 			<key>title</key>
 			<string>Archive HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
-			<string>9BE98B0F-AED0-4958-A8CC-B4C2936F0426</string>
-		</dict>
-		<key>9EE9BB95-23C7-41F2-B78A-D02C1B2A27B3</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>9EE9BB95-23C7-41F2-B78A-D02C1B2A27B3.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJ1aWxkU3lzdGVtVGFzayI6e319LCJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702815709.14521503</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Archive HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>9EE9BB95-23C7-41F2-B78A-D02C1B2A27B3</string>
-		</dict>
-		<key>BA876D6E-6168-41C2-B412-8E962D3FA6FE</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>BA876D6E-6168-41C2-B412-8E962D3FA6FE.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludFByb3ZpZGVyIjp7fX0sImJsdWVwcmludFByb3ZpZGVyX3Byb3ZpZGVyRmlsZVBhdGhTdHJpbmciOiJcL1VzZXJzXC9qb2hubDYxNVwvRGVza3RvcFwvZWxlYzQ4NDgtZnlwXC9IS0J1c0ZpbmRlci1BUlwvSEtCdXNGaW5kZXItQVIueGNvZGVwcm9qIn0=</string>
-			<key>timeStartedRecording</key>
-			<real>702816279.94081497</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>BA876D6E-6168-41C2-B412-8E962D3FA6FE</string>
-		</dict>
-		<key>BE25FDF6-3C71-4A60-89BD-85EC9A3A5741</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>BE25FDF6-3C71-4A60-89BD-85EC9A3A5741.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJ1aWxkU3lzdGVtVGFzayI6e319LCJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702814382.53923702</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>BE25FDF6-3C71-4A60-89BD-85EC9A3A5741</string>
-		</dict>
-		<key>C3DA391E-CB52-4D8D-8B63-50C0696287B9</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>C3DA391E-CB52-4D8D-8B63-50C0696287B9.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJ1aWxkU3lzdGVtVGFzayI6e319LCJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702374815.29420102</real>
-			<key>timeStoppedRecording</key>
-			<real>702374823.37665999</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>C3DA391E-CB52-4D8D-8B63-50C0696287B9</string>
-		</dict>
-		<key>C4AEFDB6-D153-4B03-BEAE-7E6904BFA6AC</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>C4AEFDB6-D153-4B03-BEAE-7E6904BFA6AC.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludFByb3ZpZGVyIjp7fX0sImJsdWVwcmludFByb3ZpZGVyX3Byb3ZpZGVyRmlsZVBhdGhTdHJpbmciOiJcL1VzZXJzXC9qb2hubDYxNVwvRGVza3RvcFwvZWxlYzQ4NDgtZnlwXC9IS0J1c0ZpbmRlci1BUlwvSEtCdXNGaW5kZXItQVIueGNvZGVwcm9qIn0=</string>
-			<key>timeStartedRecording</key>
-			<real>702816239.51030803</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>C4AEFDB6-D153-4B03-BEAE-7E6904BFA6AC</string>
-		</dict>
-		<key>DBB9C3E7-B3AB-4941-AACC-8EC7FF61F099</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>DBB9C3E7-B3AB-4941-AACC-8EC7FF61F099.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludCI6e319LCJibHVlcHJpbnRfcHJvdmlkZXJGaWxlUGF0aFN0cmluZyI6IlwvVXNlcnNcL2pvaG5sNjE1XC9EZXNrdG9wXC9lbGVjNDg0OC1meXBcL0hLQnVzRmluZGVyLUFSXC9IS0J1c0ZpbmRlci1BUi54Y29kZXByb2oiLCJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IkMyQTEwNjI2Mjk4NDZEOUUwMDg5NUMxMCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702815530.91698205</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Archive HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>DBB9C3E7-B3AB-4941-AACC-8EC7FF61F099</string>
-		</dict>
-		<key>E6FFC51A-DB9C-4070-9854-D8A44507CFC3</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>E6FFC51A-DB9C-4070-9854-D8A44507CFC3.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>eyJ0eXBlIjp7ImJsdWVwcmludCI6e319LCJibHVlcHJpbnRfcHJvdmlkZXJGaWxlUGF0aFN0cmluZyI6IlwvVXNlcnNcL2pvaG5sNjE1XC9EZXNrdG9wXC9lbGVjNDg0OC1meXBcL0hLQnVzRmluZGVyLUFSXC9IS0J1c0ZpbmRlci1BUi54Y29kZXByb2oiLCJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IkMyQTEwNjI2Mjk4NDZEOUUwMDg5NUMxMCJ9</string>
-			<key>timeStartedRecording</key>
-			<real>702814382.53923702</real>
-			<key>timeStoppedRecording</key>
-			<real>63113904000</real>
-			<key>title</key>
-			<string>Build HKBusFinder-AR</string>
-			<key>uniqueIdentifier</key>
-			<string>E6FFC51A-DB9C-4070-9854-D8A44507CFC3</string>
+			<string>FAA9CB04-20E9-4901-BC2F-73AD072AAC7E</string>
 		</dict>
 	</dict>
 </dict>

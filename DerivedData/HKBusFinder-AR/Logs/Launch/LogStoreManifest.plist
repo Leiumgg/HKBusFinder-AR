@@ -6,10 +6,10 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>CF4A5BB0-3C70-4AB9-A665-EB310D036F21</key>
+		<key>0E82DCB6-12B5-41C6-BDEF-D69AB4CA1A02</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>45EF9F1C-28DC-4AFC-8E17-40BFF6140A63</string>
+			<string>797A628C-7D6D-4B3B-AC63-D19D28739021</string>
 			<key>auxiliaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -22,7 +22,7 @@
 			<key>domainType</key>
 			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
 			<key>fileName</key>
-			<string>Run-HKBusFinder-AR-2023.04.10_18-44-39-+0800.xcresult</string>
+			<string>Run-HKBusFinder-AR-2023.04.17_09-53-21-+0800.xcresult</string>
 			<key>hasAuxiliaryLog</key>
 			<true/>
 			<key>hasConsoleLog</key>
@@ -43,13 +43,13 @@
 			<key>signature</key>
 			<string>Run HKBusFinder-AR</string>
 			<key>timeStartedRecording</key>
-			<real>702816279.94061196</real>
+			<real>703389201.46506</real>
 			<key>timeStoppedRecording</key>
 			<real>0.0</real>
 			<key>title</key>
 			<string>Run HKBusFinder-AR</string>
 			<key>uniqueIdentifier</key>
-			<string>CF4A5BB0-3C70-4AB9-A665-EB310D036F21</string>
+			<string>0E82DCB6-12B5-41C6-BDEF-D69AB4CA1A02</string>
 		</dict>
 	</dict>
 </dict>
